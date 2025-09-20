@@ -134,44 +134,36 @@ const Footer = () => (
 // === JUPITER WIDGET AND STYLES ===
 
 const JupiterTerminalWrapper = () => {
-  const [isLoaded, setIsLoaded] = useState(false);
-
   useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://terminal.jup.ag/main-v2.js';
-    script.onload = () => setIsLoaded(true);
-    document.head.appendChild(script);
-
-    return () => {
-      document.head.removeChild(script);
+    const initJupiter = () => {
+      if (window.Jupiter) {
+        (window as any).Jupiter.init({
+          endpoint: "https://api.mainnet-beta.solana.com",
+          strictTokenList: false,
+          formProps: {
+            initialInputMint: "So11111111111111111111111111111111111111112",
+            initialOutputMint: "YOUR_TOKEN_ADDRESS_HERE", // IMPORTANT: REPLACE
+          },
+          containerClassName: 'jup-terminal',
+        });
+      }
     };
+
+    const script = document.getElementById('jupiter-terminal-script');
+    if (!script) {
+      const newScript = document.createElement('script');
+      newScript.src = 'https://terminal.jup.ag/main-v2.js';
+      newScript.id = 'jupiter-terminal-script';
+      newScript.async = true;
+      newScript.onload = initJupiter;
+      document.head.appendChild(newScript);
+    } else {
+      initJupiter();
+    }
   }, []);
 
-  if (!isLoaded) {
-    return <div className="loading-widget">Loading Terminal...</div>;
-  }
-
-  const launchJupiter = () => {
-    (window as any).Jupiter.init({
-      endpoint: "https://api.mainnet-beta.solana.com",
-      strictTokenList: false,
-      formProps: {
-        initialInputMint: "So11111111111111111111111111111111111111112",
-        initialOutputMint: "YOUR_TOKEN_ADDRESS_HERE", // IMPORTANT: REPLACE
-      },
-      containerClassName: 'jup-terminal',
-    });
-  };
-
-  useEffect(() => {
-    if (isLoaded) {
-      launchJupiter();
-    }
-  }, [isLoaded]);
-
-  return <div id="integrated-terminal" style={{ minHeight: '500px' }}></div>;
+  return <div id="integrated-terminal" style={{ minHeight: '500px' }}><div className="loading-widget">Loading Terminal...</div></div>;
 };
-
 
 const PageStyles = () => (
   <style jsx global>{`
