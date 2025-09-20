@@ -136,7 +136,7 @@ const Footer = () => (
 const JupiterTerminalWrapper = () => {
   useEffect(() => {
     const initJupiter = () => {
-      if (window.Jupiter) {
+      if ((window as any).Jupiter) {
         (window as any).Jupiter.init({
           endpoint: "https://api.mainnet-beta.solana.com",
           strictTokenList: false,
@@ -164,6 +164,7 @@ const JupiterTerminalWrapper = () => {
 
   return <div id="integrated-terminal" style={{ minHeight: '500px' }}><div className="loading-widget">Loading Terminal...</div></div>;
 };
+
 
 const PageStyles = () => (
   <style jsx global>{`
