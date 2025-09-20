@@ -152,7 +152,7 @@ const JupiterTerminalWrapper = () => {
   }
 
   const launchJupiter = () => {
-    window.Jupiter.init({
+    (window as any).Jupiter.init({
       endpoint: "https://api.mainnet-beta.solana.com",
       strictTokenList: false,
       formProps: {
