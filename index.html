@@ -27,6 +27,7 @@
             --bg-color: #F5F1E8; /* Parchment/Sand */
             --primary-red: #B22222; /* Firebrick Red */
             --secondary-blue: #2C3E50; /* Midnight Blue */
+            --accent-orange: #FF7A18; /* Sunset Orange for high contrast */
             --text-dark: #1A1A1A;
             --font-header: 'Black Ops One', sans-serif;
             --font-body: 'Roboto Slab', serif;
@@ -71,6 +72,12 @@
             opacity: 1;
             transition: opacity 0.5s linear;
         }
+        
+        /* FIX: Fact Ticker Text Color */
+        #fact-ticker {
+            color: var(--accent-orange);
+            transition: opacity 0.3s ease-in-out;
+        }
     </style>
 </head>
 <body class="bg-bg-color text-text-dark">
@@ -89,7 +96,7 @@
     <header class="text-center py-16 md:py-24 border-b-4 border-double border-text-dark mb-16">
         <div class="container mx-auto px-6">
             <h1 class="font-title text-5xl md:text-7xl lg:text-8xl uppercase text-primary-red" style="text-shadow: 2px 2px 0px var(--secondary-blue), 4px 4px 0px rgba(0,0,0,0.2);">CHUCK</h1>
-            <h2 class="font-headline text-3xl md:text-5xl text-secondary-blue mt-2">Roundhouse the market</h2>
+            <h2 class="font-headline text-3xl md:text-5xl text-primary-red mt-2">Roundhouse the market</h2>
             <p class="mt-4 text-lg md:text-xl max-w-2xl mx-auto">Legendary memecoin energy. Parody tribute. Community chaos.</p>
             
              <div class="my-8 inline-block border-4 border-secondary-blue bg-white shadow-lg" style="box-shadow: 8px 8px 0 var(--primary-red);">
@@ -102,7 +109,7 @@
             </div>
             <p class="mt-6 text-xs text-gray-600"><strong>Parody Notice:</strong> Not endorsed by any real-life legend. Not financial advice.</p>
         </div>
-         <div id="fact-ticker-container" class="w-full bg-secondary-blue text-white mt-12 py-2">
+         <div id="fact-ticker-container" class="w-full bg-secondary-blue mt-12 py-2">
             <p id="fact-ticker" class="font-mono text-sm"></p>
         </div>
     </header>
@@ -131,7 +138,7 @@
             </div>
         </section>
 
-        <section class="mb-24 bg-white p-8 border-2 border-text-dark shadow-lg" style="box-shadow: 10px 10px 0px var(--secondary-blue);">
+        <section class="mb-24 bg-white p-8 border-2 border-text-dark" style="box-shadow: 10px 10px 0px var(--text-dark);">
             <h2 class="font-title text-4xl text-center text-primary-red mb-8">How to Ape In</h2>
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="text-center">
