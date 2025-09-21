@@ -8,55 +8,41 @@
     <meta name="description" content="CHUCK is a parody memecoin built for degens who like their humor with a roundhouse. Liquidity locked, community-first.">
     <meta property="og:title" content="CHUCK — Roundhouse the market (CHUCK token)">
     <meta property="og:description" content="CHUCK is a parody memecoin built for degens who like their humor with a roundhouse. Liquidity locked, community-first.">
-    <meta property="og:image" content="https://storage.googleapis.com/gemini-generative-ai-api-file-cache/214a1e95-7798-422f-ae52-c0e816a3c5a8/og_image.jpg">
+    <meta property="og:image" content="https://i.imgur.com/hDaT1fN.jpeg">
     <meta property="og:url" content="YOUR_WEBSITE_URL">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="CHUCK — Roundhouse the market (CHUCK token)">
     <meta name="twitter:description" content="CHUCK is a parody memecoin built for degens who like their humor with a roundhouse. Liquidity locked, community-first.">
-    <meta name="twitter:image" content="https://storage.googleapis.com/gemini-generative-ai-api-file-cache/214a1e95-7798-422f-ae52-c0e816a3c5a8/og_image.jpg">
+    <meta name="twitter:image" content="https://i.imgur.com/hDaT1fN.jpeg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     
     <script src="https://cdn.tailwindcss.com"></script>
     
     <style>
         /* Custom CSS Variables & Base Styles */
         :root {
-            --primary: #FF7A18; /* sunset orange */
-            --accent: #37422E;  /* olive */
-            --highlight: #CBA86B; /* sepia */
-            --base: #0B0B0B;
-            --cream: #FAF4E6;
+            --background: #1E1E1E;
+            --surface: #2A2A2A;
+            --primary: #FFA500; /* Orange Accent */
+            --text-primary: #FFFFFF;
+            --text-secondary: #AAAAAA;
+            --shadow-light: rgba(255, 255, 255, 0.05);
+            --shadow-dark: rgba(0, 0, 0, 0.5);
         }
 
         body {
-            background-color: var(--base);
+            background-color: var(--background);
             font-family: 'Inter', sans-serif;
-            color: var(--cream);
+            color: var(--text-primary);
         }
 
-        .font-headline { font-family: 'Bebas Neue', sans-serif; }
-        .font-title { font-family: 'Anton', sans-serif; }
+        .font-headline { font-family: 'Inter', sans-serif; font-weight: 900; }
+        .font-title { font-family: 'Inter', sans-serif; font-weight: 900; }
         .text-primary { color: var(--primary); }
         .bg-primary { background-color: var(--primary); }
-        .border-primary { border-color: var(--primary); }
-
-        /* Hero VHS Overlay */
-        .vhs-overlay {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAQAAAAziH6sAAAADklEQVR42mNkaAqAAABkAAn8102iAAAAAElFTkSuQmCC');
-            opacity: 0.1;
-            pointer-events: none;
-            animation: scanlines 0.2s linear infinite;
-        }
-        @keyframes scanlines {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(100%); }
-        }
 
         /* Card Flip Animation */
         .flip-card { perspective: 1000px; }
@@ -69,8 +55,8 @@
         #toast {
             visibility: hidden;
             min-width: 250px;
-            background-color: var(--accent);
-            color: #fff;
+            background-color: var(--primary);
+            color: #000;
             text-align: center;
             border-radius: 8px;
             padding: 16px;
@@ -89,51 +75,47 @@
         }
     </style>
 </head>
-<body class="bg-base text-cream">
+<body class="bg-background text-text-primary">
 
-    <header class="relative overflow-hidden border-b-4 border-primary shadow-2xl">
-        <div class="absolute inset-0 bg-black opacity-50 z-0"></div>
-        <div class="vhs-overlay z-10"></div>
-        <img src="https://storage.googleapis.com/gemini-generative-ai-api-file-cache/214a1e95-7798-422f-ae52-c0e816a3c5a8/hero_poster.jpg" alt="Stylized 80s action hero poster" class="absolute inset-0 w-full h-full object-cover opacity-30">
-        
-        <div class="container mx-auto px-6 py-24 relative z-20 text-center">
-            <div class="w-48 h-48 mx-auto mb-4 bg-contain bg-no-repeat bg-center" style="background-image: url('https://storage.googleapis.com/gemini-generative-ai-api-file-cache/214a1e95-7798-422f-ae52-c0e816a3c5a8/hero_logo.png');"></div>
-            <h1 class="font-title text-5xl md:text-7xl lg:text-8xl uppercase tracking-wider text-white" style="text-shadow: 3px 3px 0px var(--primary);">CHUCK</h1>
+    <header class="relative overflow-hidden">
+        <div class="container mx-auto px-6 py-24 text-center">
+            <img src="https://i.ibb.co/L5r4J5T/chuck-pixel-kick.png" alt="Stylized mascot" class="w-32 h-32 mx-auto mb-6">
+            <h1 class="font-title text-5xl md:text-7xl lg:text-8xl uppercase tracking-tighter text-white">CHUCK</h1>
             <h2 class="font-headline text-3xl md:text-5xl text-primary mt-2">Roundhouse the market</h2>
-            <p class="mt-4 text-lg md:text-xl text-cream max-w-2xl mx-auto">Legendary memecoin energy. Parody tribute. Community chaos.</p>
+            <p class="mt-4 text-lg md:text-xl text-text-secondary max-w-2xl mx-auto">Legendary memecoin energy. Parody tribute. Community chaos.</p>
             
             <div class="mt-8 flex justify-center items-center space-x-4">
-                <a href="#" class="font-headline text-xl bg-primary text-base px-8 py-3 rounded-md shadow-lg hover:bg-opacity-80 transition-transform transform hover:scale-105">Buy CHUCK</a>
-                <a href="#lore" class="font-headline text-xl bg-accent text-cream px-8 py-3 rounded-md shadow-lg hover:bg-opacity-80 transition-transform transform hover:scale-105">Read Lore</a>
+                <a href="#" class="font-headline text-xl bg-primary text-background px-8 py-3 rounded-xl shadow-lg transition-transform transform hover:scale-105" style="box-shadow: 0px 4px 15px rgba(255, 165, 0, 0.2);">Buy CHUCK</a>
+                <a href="#lore" class="font-headline text-xl bg-surface text-text-primary px-8 py-3 rounded-xl shadow-lg transition-transform transform hover:scale-105" style="box-shadow: -4px -4px 8px var(--shadow-light), 4px 4px 8px var(--shadow-dark);">Read Lore</a>
             </div>
-            <p class="mt-4 text-xs text-gray-400"><strong>Parody Notice:</strong> Not endorsed by any real-life legend. Not financial advice.</p>
+            <p class="mt-4 text-xs text-gray-500"><strong>Parody Notice:</strong> Not endorsed by any real-life legend. Not financial advice.</p>
         </div>
 
-        <div id="fact-ticker-container" class="absolute bottom-0 left-0 w-full bg-black bg-opacity-70 py-2 text-center">
-            <p id="fact-ticker" class="font-mono text-sm text-highlight"></p>
+        <div id="fact-ticker-container" class="w-full bg-black bg-opacity-30 py-2 text-center">
+            <p id="fact-ticker" class="font-mono text-sm text-primary"></p>
         </div>
     </header>
 
     <main class="container mx-auto px-6 py-12">
         <section class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 text-center mb-16">
-            <div class="bg-gray-900 p-4 rounded-lg border border-accent">
-                <h3 class="font-headline text-lg text-highlight">Supply</h3>
+            <div class="bg-surface p-4 rounded-2xl" style="box-shadow: -5px -5px 10px var(--shadow-light), 5px 5px 10px var(--shadow-dark);">
+                <h3 class="font-headline text-lg text-primary">Supply</h3>
                 <p class="text-2xl font-bold">1B</p>
             </div>
-            <div class="bg-gray-900 p-4 rounded-lg border border-accent">
-                <h3 class="font-headline text-lg text-highlight">Dev Reward</h3>
+            <div class="bg-surface p-4 rounded-2xl" style="box-shadow: -5px -5px 10px var(--shadow-light), 5px 5px 10px var(--shadow-dark);">
+                <h3 class="font-headline text-lg text-primary">Dev Reward</h3>
                 <p class="text-2xl font-bold">0%</p>
             </div>
-            <div class="bg-gray-900 p-4 rounded-lg border border-accent">
-                <h3 class="font-headline text-lg text-highlight">Liquidity</h3>
+            <div class="bg-surface p-4 rounded-2xl" style="box-shadow: -5px -5px 10px var(--shadow-light), 5px 5px 10px var(--shadow-dark);">
+                <h3 class="font-headline text-lg text-primary">Liquidity</h3>
                 <p class="text-green-400 font-bold">Locked ✅</p>
             </div>
-            <div class="bg-gray-900 p-4 rounded-lg border border-accent">
-                <h3 class="font-headline text-lg text-highlight">Max Wallet</h3>
+            <div class="bg-surface p-4 rounded-2xl" style="box-shadow: -5px -5px 10px var(--shadow-light), 5px 5px 10px var(--shadow-dark);">
+                <h3 class="font-headline text-lg text-primary">Max Wallet</h3>
                 <p class="text-2xl font-bold">1%</p>
             </div>
-             <div class="bg-gray-900 p-4 rounded-lg border border-accent col-span-2 lg:col-span-1">
-                <h3 class="font-headline text-lg text-highlight">Contract</h3>
+             <div class="bg-surface p-4 rounded-2xl col-span-2 lg:col-span-1" style="box-shadow: -5px -5px 10px var(--shadow-light), 5px 5px 10px var(--shadow-dark);">
+                <h3 class="font-headline text-lg text-primary">Contract</h3>
                 <p class="text-green-400 font-bold">Verified ✅</p>
             </div>
         </section>
@@ -141,34 +123,34 @@
         <section class="mb-16">
             <h2 class="font-title text-4xl text-center text-primary mb-8">How to Ape In</h2>
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="text-center">
-                    <div class="text-6xl mb-2"> wallets</div>
-                    <h3 class="font-headline text-2xl text-highlight">1. Connect Wallet</h3>
-                    <p>Use a Solana wallet like Phantom or Solflare.</p>
+                <div class="text-center p-6 bg-surface rounded-2xl" style="box-shadow: -5px -5px 10px var(--shadow-light), 5px 5px 10px var(--shadow-dark);">
+                    <div class="text-6xl mb-2">📥</div>
+                    <h3 class="font-headline text-2xl text-primary">1. Get a Wallet</h3>
+                    <p class="text-text-secondary">Use a Solana wallet like Phantom or Solflare.</p>
                 </div>
-                <div class="text-center">
-                    <div class="text-6xl mb-2">contract</div>
-                    <h3 class="font-headline text-2xl text-highlight">2. Paste Contract</h3>
-                    <p>Paste the contract address on pump.fun or Raydium.</p>
+                <div class="text-center p-6 bg-surface rounded-2xl" style="box-shadow: -5px -5px 10px var(--shadow-light), 5px 5px 10px var(--shadow-dark);">
+                    <div class="text-6xl mb-2">📋</div>
+                    <h3 class="font-headline text-2xl text-primary">2. Paste Contract</h3>
+                    <p class="text-text-secondary">Paste the contract address on pump.fun or Raydium.</p>
                 </div>
-                <div class="text-center">
-                    <div class="text-6xl mb-2">swap</div>
-                    <h3 class="font-headline text-2xl text-highlight">3. Confirm Swap</h3>
-                    <p>Set slippage to 1-3% and confirm. Welcome to the dojo.</p>
+                <div class="text-center p-6 bg-surface rounded-2xl" style="box-shadow: -5px -5px 10px var(--shadow-light), 5px 5px 10px var(--shadow-dark);">
+                    <div class="text-6xl mb-2">🔄</div>
+                    <h3 class="font-headline text-2xl text-primary">3. Confirm Swap</h3>
+                    <p class="text-text-secondary">Set slippage to 1-3% and confirm. Welcome to the dojo.</p>
                 </div>
             </div>
-            <div class="mt-8 text-center bg-gray-900 p-4 rounded-lg">
-                <p class="text-highlight font-headline">CONTRACT ADDRESS (SOLANA)</p>
+            <div class="mt-8 text-center bg-surface p-4 rounded-2xl" style="box-shadow: -5px -5px 10px var(--shadow-light), 5px 5px 10px var(--shadow-dark);">
+                <p class="text-primary font-headline">CONTRACT ADDRESS (SOLANA)</p>
                 <div class="flex justify-center items-center mt-2">
-                    <code id="contract-address" class="text-sm md:text-base bg-base p-2 rounded-l-md">YourSOLe...naContractAddressHere...CHUCK</code>
-                    <button id="copy-button" class="bg-primary text-base px-4 py-2 rounded-r-md font-headline">Copy</button>
+                    <code id="contract-address" class="text-sm md:text-base bg-background p-2 rounded-l-md text-text-secondary">YourSOLe...naContractAddressHere...CHUCK</code>
+                    <button id="copy-button" class="bg-primary text-background px-4 py-2 rounded-r-md font-headline">Copy</button>
                 </div>
             </div>
         </section>
 
         <section id="lore" class="mb-16">
             <h2 class="font-title text-4xl text-center text-primary mb-2">The Lore</h2>
-            <p class="text-center max-w-3xl mx-auto mb-8">CHUCK isn't a token, it's a legend. A force of nature so powerful, it makes charts do pushups. These are the undisputed facts of the CHUCK-verse. Read them. Learn them. Meme them.</p>
+            <p class="text-center text-text-secondary max-w-3xl mx-auto mb-8">CHUCK isn't a token, it's a legend. A force of nature so powerful, it makes charts do pushups. These are the undisputed facts of the CHUCK-verse. Read them. Learn them. Meme them.</p>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="lore-cards">
                 </div>
         </section>
@@ -176,7 +158,7 @@
         <section class="mb-16">
              <h2 class="font-title text-4xl text-center text-primary mb-8">Meme Gallery</h2>
             <div class="text-center mb-8">
-                <button class="bg-primary text-base font-headline px-6 py-3 rounded-md shadow-lg">Submit a Meme (Win 10k CHUCK)</button>
+                <button class="bg-primary text-background font-headline px-6 py-3 rounded-xl shadow-lg" style="box-shadow: 0px 4px 15px rgba(255, 165, 0, 0.2);">Submit a Meme (Win 10k CHUCK)</button>
             </div>
              <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" id="meme-gallery">
                 </div>
@@ -185,14 +167,14 @@
         <section id="roadmap" class="mb-16">
             <h2 class="font-title text-4xl text-center text-primary mb-12">The Roadmap</h2>
             <div class="relative">
-                <div class="border-l-4 border-accent absolute h-full top-0 left-1/2 -ml-0.5"></div>
+                <div class="border-l-4 border-primary border-opacity-30 absolute h-full top-0 left-1/2 -ml-0.5"></div>
                 </div>
         </section>
         
-        </main>
+    </main>
 
-    <footer class="bg-base border-t-2 border-accent mt-16 py-8">
-        <div class="container mx-auto px-6 text-center text-gray-400">
+    <footer class="bg-base border-t-2 border-surface mt-16 py-8">
+        <div class="container mx-auto px-6 text-center text-text-secondary">
             <div class="flex justify-center space-x-6 mb-4">
                 <a href="#" class="hover:text-primary">Telegram</a>
                 <a href="#" class="hover:text-primary">X (Twitter)</a>
@@ -227,19 +209,23 @@
                     factTicker.style.opacity = 1;
                 }, 500);
             }
-            updateFact();
-            setInterval(updateFact, 6000);
+            if(factTicker) {
+                updateFact();
+                setInterval(updateFact, 6000);
+            }
 
             // --- Copy Contract Button ---
             const copyButton = document.getElementById('copy-button');
             const contractAddress = document.getElementById('contract-address');
             const toast = document.getElementById('toast');
-            copyButton.addEventListener('click', () => {
-                navigator.clipboard.writeText(contractAddress.textContent).then(() => {
-                    toast.className = "show";
-                    setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 3000);
+            if(copyButton) {
+                copyButton.addEventListener('click', () => {
+                    navigator.clipboard.writeText(contractAddress.textContent).then(() => {
+                        toast.className = "show";
+                        setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 3000);
+                    });
                 });
-            });
+            }
             
             // --- Lore Cards ---
             const loreFacts = [
@@ -251,41 +237,47 @@
                 { title: "Self-Auditing Contracts", text: "Smart contracts audit themselves in CHUCK’s presence." }
             ];
             const loreContainer = document.getElementById('lore-cards');
-            loreFacts.forEach(fact => {
-                const card = `
-                    <div class="flip-card bg-gray-900 rounded-lg h-48">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front border border-highlight">
-                                <h3 class="font-headline text-2xl text-highlight">${fact.title}</h3>
+            if(loreContainer) {
+                loreFacts.forEach(fact => {
+                    const card = `
+                        <div class="flip-card bg-surface rounded-2xl h-48" style="box-shadow: -5px -5px 10px var(--shadow-light), 5px 5px 10px var(--shadow-dark);">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <h3 class="font-headline text-2xl text-primary">${fact.title}</h3>
+                                </div>
+                                <div class="flip-card-back bg-primary rounded-2xl">
+                                    <p class="text-background font-bold">${fact.text}</p>
+                                </div>
                             </div>
-                            <div class="flip-card-back bg-accent border border-highlight">
-                                <p class="text-cream">${fact.text}</p>
-                            </div>
-                        </div>
-                    </div>`;
-                loreContainer.innerHTML += card;
-            });
+                        </div>`;
+                    loreContainer.innerHTML += card;
+                });
+            }
             
             // --- Meme Gallery ---
             const memeGallery = document.getElementById('meme-gallery');
             const memes = [
-                { img: 'https://storage.googleapis.com/gemini-generative-ai-api-file-cache/214a1e95-7798-422f-ae52-c0e816a3c5a8/meme_1.jpg', caption: 'Roundhouse to the Moon', author: '@memelord' },
-                { img: 'https://storage.googleapis.com/gemini-generative-ai-api-file-cache/214a1e95-7798-422f-ae52-c0e816a3c5a8/meme_2.jpg', caption: 'When your slippage turns into admiration', author: '@degentrader' },
-                { img: 'https://storage.googleapis.com/gemini-generative-ai-api-file-cache/214a1e95-7798-422f-ae52-c0e816a3c5a8/meme_3.jpg', caption: 'CHUCK winked and my portfolio did pushups', author: '@fitcoins' },
-                { img: 'https://storage.googleapis.com/gemini-generative-ai-api-file-cache/214a1e95-7798-422f-ae52-c0e816a3c5a8/meme_4.jpg', caption: 'Gas fees? CHUCK covers emotional fees', author: '@slowmo' },
-                { img: 'https://storage.googleapis.com/gemini-generative-ai-api-file-cache/214a1e95-7798-422f-ae52-c0e816a3c5a8/meme_5.jpg', caption: 'When you buy CHUCK and your ex texts you', author: '@stuntman' },
-                { img: 'https://storage.googleapis.com/gemini-generative-ai-api-file-cache/214a1e95-7798-422f-ae52-c0e816a3c5a8/meme_6.jpg', caption: 'Moon photos now with extra roundhouse filter', author: '@astrofunk' },
-                { img: 'https://storage.googleapis.com/gemini-generative-ai-api-file-cache/214a1e95-7798-422f-ae52-c0e816a3c5a8/meme_7.jpg', caption: 'Proof CHUCK pays rent to the moon', author: '@proofguy' },
-                { img: 'https://storage.googleapis.com/gemini-generative-ai-api-file-cache/214a1e95-7798-422f-ae52-c0e816a3c5a8/meme_8.jpg', caption: 'When the chart says ‘no’ and CHUCK says ‘yes’', author: '@chartwhisper' },
+                { img: 'https://i.imgur.com/gB3gSAg.jpeg', caption: 'Roundhouse to the Moon', author: '@memelord' },
+                { img: 'https://i.imgur.com/rLq57dJ.jpeg', caption: 'When your slippage turns into admiration', author: '@degentrader' },
+                { img: 'https://i.imgur.com/W2q2s2o.jpeg', caption: 'CHUCK winked and my portfolio did pushups', author: '@fitcoins' },
+                { img: 'https://i.imgur.com/O6M9k1o.jpeg', caption: 'Gas fees? CHUCK covers emotional fees', author: '@slowmo' },
+                { img: 'https://i.imgur.com/Y1cQ7bN.jpeg', caption: 'When you buy CHUCK and your ex texts you', author: '@stuntman' },
+                { img: 'https://i.imgur.com/sZ4e7gL.jpeg', caption: 'Moon photos now with extra roundhouse filter', author: '@astrofunk' },
+                { img: 'https://i.imgur.com/j4q4X0k.jpeg', caption: 'Proof CHUCK pays rent to the moon', author: '@proofguy' },
+                { img: 'https://i.imgur.com/oW5e2qR.jpeg', caption: 'When the chart says ‘no’ and CHUCK says ‘yes’', author: '@chartwhisper' },
             ];
-             memes.forEach(meme => {
-                const memeEl = document.createElement('div');
-                memeEl.innerHTML = `
-                    <img src="${meme.img}" alt="${meme.caption}" class="w-full h-auto rounded-lg object-cover aspect-square" loading="lazy">
-                    <p class="text-sm mt-1">“${meme.caption}”</p>
-                    <p class="text-xs text-highlight">${meme.author}</p>`;
-                memeGallery.appendChild(memeEl);
-            });
+             if(memeGallery) {
+                memes.forEach(meme => {
+                    const memeEl = document.createElement('div');
+                    memeEl.className = "bg-surface p-2 rounded-xl";
+                    memeEl.style.boxShadow = "-5px -5px 10px var(--shadow-light), 5px 5px 10px var(--shadow-dark)";
+                    memeEl.innerHTML = `
+                        <img src="${meme.img}" alt="${meme.caption}" class="w-full h-auto rounded-lg object-cover aspect-square" loading="lazy">
+                        <p class="text-sm mt-2">“${meme.caption}”</p>
+                        <p class="text-xs text-primary">${meme.author}</p>`;
+                    memeGallery.appendChild(memeEl);
+                });
+            }
             
             // --- Roadmap ---
             const roadmapContainer = document.querySelector('#roadmap .relative');
@@ -297,24 +289,26 @@
                 { title: 'Community Governance', desc: 'Holders vote on the next legendary feat.', side: 'left' },
             ];
 
-            milestones.forEach((item, index) => {
-                const sideClass = item.side === 'left' ? 'md:pr-8' : 'md:pl-8';
-                const textAlign = item.side === 'left' ? 'md:text-right' : 'md:text-left';
-                const containerClass = item.side === 'left' ? 'md:flex-row-reverse' : '';
+            if(roadmapContainer) {
+                milestones.forEach((item, index) => {
+                    const sideClass = item.side === 'left' ? 'md:pr-8' : 'md:pl-8';
+                    const textAlign = item.side === 'left' ? 'md:text-right' : 'md:text-left';
+                    const containerClass = item.side === 'left' ? 'md:flex-row-reverse' : '';
 
-                const milestoneEl = `
-                    <div class="mb-8 flex justify-between items-center w-full ${containerClass}">
-                        <div class="order-1 md:w-5/12"></div>
-                        <div class="z-20 flex items-center order-1 bg-primary shadow-xl w-8 h-8 rounded-full">
-                            <h1 class="mx-auto font-semibold text-lg text-base">${index + 1}</h1>
-                        </div>
-                        <div class="order-1 bg-gray-900 rounded-lg shadow-xl w-full md:w-5/12 p-4 ${sideClass} ${textAlign}">
-                            <h3 class="font-headline mb-3 text-highlight text-xl">${item.title}</h3>
-                            <p class="text-sm leading-snug tracking-wide text-cream text-opacity-80">${item.desc}</p>
-                        </div>
-                    </div>`;
-                roadmapContainer.innerHTML += milestoneEl;
-            });
+                    const milestoneEl = `
+                        <div class="mb-8 flex justify-between items-center w-full ${containerClass}">
+                            <div class="order-1 md:w-5/12"></div>
+                            <div class="z-20 flex items-center order-1 bg-primary shadow-xl w-8 h-8 rounded-full">
+                                <h1 class="mx-auto font-semibold text-lg text-background">${index + 1}</h1>
+                            </div>
+                            <div class="order-1 bg-surface rounded-2xl shadow-xl w-full md:w-5/12 p-4 ${sideClass} ${textAlign}" style="box-shadow: -5px -5px 10px var(--shadow-light), 5px 5px 10px var(--shadow-dark);">
+                                <h3 class="font-headline mb-3 text-primary text-xl">${item.title}</h3>
+                                <p class="text-sm leading-snug tracking-wide text-text-secondary">${item.desc}</p>
+                            </div>
+                        </div>`;
+                    roadmapContainer.innerHTML += milestoneEl;
+                });
+            }
 
         });
     </script>
