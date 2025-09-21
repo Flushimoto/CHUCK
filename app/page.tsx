@@ -89,3 +89,21 @@ const RoadmapSection = () => (
       </div>
       <div className="roadmap-card">
         <h3>PHASE II: SHOCK & AWE</h3>
+        <p>Execute a flawless Raydium deployment. Shatter holder milestones. Begin a relentless marketing air-strike to achieve total chart dominance.</p>
+      </div>
+      <div className="roadmap-card">
+        <h3>PHASE III: WORLD STAGE</h3>
+        <p>Secure listings on major CEX platforms. Become a globally recognized symbol of strength in the crypto space. The mission is complete when we say it is.</p>
+      </div>
+    </div>
+  </section>
+);
+
+const Footer = () => (
+  <footer className="footer">
+    <p>This project is a parody tribute to an American legend. It is not affiliated with Chuck Norris.</p>
+    <p>ALWAYS READY. ALWAYS VICTORIOUS. $CHUCK 2025.</p>
+  </footer>
+);
+
+export default ChuckNorrisCoinPage;
