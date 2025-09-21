@@ -7,18 +7,17 @@ const ChuckNorrisCoinPage = () => {
   const [isModalOpen, setModalOpen] = useState(false);
 
   useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://terminal.jup.ag/main-v2.js';
-    script.id = 'jupiter-terminal-script';
-    document.head.appendChild(script);
-
-    return () => {
-      document.head.removeChild(script);
-    };
+    const script = document.getElementById('jupiter-terminal-script');
+    if (!script) {
+        const newScript = document.createElement('script');
+        newScript.src = 'https://terminal.jup.ag/main-v2.js';
+        newScript.id = 'jupiter-terminal-script';
+        document.head.appendChild(newScript);
+    }
   }, []);
   
   useEffect(() => {
-    if (isModalOpen && window.Jupiter) {
+    if (isModalOpen && (window as any).Jupiter) {
       (window as any).Jupiter.init({
         endpoint: "https://api.mainnet-beta.solana.com",
         strictTokenList: false,
@@ -39,7 +38,7 @@ const ChuckNorrisCoinPage = () => {
 
 
   const openJupiterModal = () => {
-    if (window.Jupiter) {
+    if ((window as any).Jupiter) {
         setModalOpen(true);
     } else {
         console.error("Jupiter script not loaded yet.");
