@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Head from 'next/head'; // We need to import Head for the new style method
 
 // === MAIN WEBSITE COMPONENT ===
 const ChuckNorrisCoinPage = () => {
@@ -110,8 +111,8 @@ const Footer = () => (
 
 // === STYLES ===
 
-const PageStyles = () => (
-  <style jsx global>{`
+const PageStyles = () => {
+    const css = `
     @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Roboto+Slab:wght@400;700&display=swap');
 
     :root {
@@ -327,8 +328,13 @@ const PageStyles = () => (
       color: var(--secondary-blue);
       font-weight: 700;
     }
-  `}</style>
-);
+  `;
+  return (
+    <Head>
+      <style>{css}</style>
+    </Head>
+  );
+};
 
 
 export default ChuckNorrisCoinPage;
