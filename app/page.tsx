@@ -1,332 +1,311 @@
 "use client";
 
-import React, { useState, useEffect, Suspense } from 'react';
+import React, { useState, useEffect } from 'react';
 
 // === MAIN WEBSITE COMPONENT ===
 const ChuckNorrisCoinPage = () => {
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://terminal.jup.ag/main-v2.js';
+    script.id = 'jupiter-terminal-script';
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
+  
+  useEffect(() => {
+    if (isModalOpen && window.Jupiter) {
+      (window as any).Jupiter.init({
+        endpoint: "https://api.mainnet-beta.solana.com",
+        strictTokenList: false,
+        displayMode: "modal",
+        formProps: {
+            initialInputMint: "So11111111111111111111111111111111111111112",
+            initialOutputMint: "YOUR_TOKEN_ADDRESS_HERE",
+        },
+        onSuccess: ({ txid } : { txid: string }) => {
+            console.log('Swap successful:', txid);
+        },
+        onClose: () => {
+            setModalOpen(false);
+        },
+      });
+    }
+  }, [isModalOpen]);
+
+
+  const openJupiterModal = () => {
+    if (window.Jupiter) {
+        setModalOpen(true);
+    } else {
+        console.error("Jupiter script not loaded yet.");
+    }
+  };
+
+
   return (
-    <div className="container">
-      <main>
-        <HeroSection />
-        <TradingPostSection />
-        <LegendSection />
-        <ChuckonomicsSection />
-        <RoadmapSection />
-        <HowToBuySection />
-      </main>
-      <Footer />
+    <>
       <PageStyles />
-    </div>
+      <div className="container">
+        <main>
+          <HeroSection onBuyClick={openJupiterModal} />
+          <InfoSection />
+          <RoadmapSection />
+        </main>
+        <Footer />
+      </div>
+    </>
   );
 };
 
 // === SECTIONS ===
 
-const HeroSection = () => (
+const HeroSection = ({ onBuyClick } : { onBuyClick: () => void }) => (
   <header className="hero">
-    <div className="hero-content">
-      <img src="https://i.ibb.co/L5r4J5T/chuck-pixel-kick.png" alt="Chuck Norris Mascot" className="mascot" />
-      <h1 className="title">CHUCK NORRIS COIN ($CHUCK)</h1>
-      <p className="tagline">This token doesn't go to the moon. The moon asks it for permission to move.</p>
-      <div className="cta-buttons">
-        <a href="https://raydium.io/swap/?inputCurrency=sol&outputCurrency=YOUR_TOKEN_ADDRESS" target="_blank" rel="noopener noreferrer" className="btn">BUY $CHUCK NOW</a>
-        <a href="YOUR_TELEGRAM_LINK" target="_blank" rel="noopener noreferrer" className="btn">JOIN THE DELTA FORCE</a>
-        <a href="YOUR_X_LINK" target="_blank" rel="noopener noreferrer" className="btn">FOLLOW ON X</a>
-      </div>
+    <img src="https://i.ibb.co/L5r4J5T/chuck-pixel-kick.png" alt="Chuck Norris Mascot" className="mascot" />
+    <h1 className="title">$CHUCK</h1>
+    <h2 className="subtitle">THE ONLY COIN THAT CAN UN-RUG ITSELF.</h2>
+    <p className="tagline">A decentralized movement celebrating absolute strength and the power of a good roundhouse kick to the bear market.</p>
+    <div className="cta-buttons">
+      <button onClick={onBuyClick} className="btn btn-primary">BUY $CHUCK NOW</button>
+      <a href="YOUR_TELEGRAM_LINK" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">JOIN TELEGRAM</a>
     </div>
   </header>
 );
 
-const TradingPostSection = () => (
-  <section id="swap" className="widget-section">
-    <h2 className="section-title">THE TRADING POST</h2>
-    <p className="section-subtitle">Trade $CHUCK here. Instantly. No need to leave.</p>
-    <div className="widget-container">
-      <Suspense fallback={<div className="loading-widget">Loading Terminal...</div>}>
-        <JupiterTerminalWrapper />
-      </Suspense>
-    </div>
-  </section>
-);
-
-const LegendSection = () => (
-  <section className="content-section">
-    <h2 className="section-title">THE LEGEND OF $CHUCK</h2>
-    <p>
-      Some coins are built on code. Some are built on hype. Chuck Norris Coin is built on cold, hard, undisputed facts.
-    </p>
-    <p>
-      $CHUCK is the ultimate tribute to the man who counted to infinity... twice. It is a decentralized movement celebrating absolute strength, diamond hands, and the power of a good roundhouse kick to the bear market.
-    </p>
-    <p>
-      We are more than a memecoin. We are a statement. We don't ask for gains; we tell them where to go. This project is a parody and has no affiliation with the legend himself. He just approves of the strength.
-    </p>
-  </section>
-);
-
-const ChuckonomicsSection = () => (
-  <section className="content-section">
-    <h2 className="section-title">CHUCK-ONOMICS</h2>
-    <div className="token-details">
-      <p><strong>TOTAL SUPPLY:</strong> 10,000,000,000 $CHUCK</p>
-      <p><strong>TAXES:</strong> 0% Buy / 0% Sell. Chuck Norris doesn't believe in taxes.</p>
-      <p><strong>LIQUIDITY:</strong> Burned. The LP was burned with a single glare. It is un-ruggable.</p>
-      <p><strong>CONTRACT ADDRESS:</strong> YOUR_TOKEN_ADDRESS_HERE</p>
-    </div>
-  </section>
+const InfoSection = () => (
+    <section className="info-grid">
+        <div className="info-card">
+            <h3>THE LEGEND</h3>
+            <p>
+                $CHUCK is the ultimate tribute to internet legend. It's more than a coin; it's a statement against market volatility. We don't fear dips; dips fear us.
+            </p>
+        </div>
+        <div className="info-card">
+            <h3>CHUCK-ONOMICS</h3>
+            <ul>
+                <li><strong>Taxes:</strong> 0% Buy / 0% Sell</li>
+                <li><strong>Liquidity:</strong> Burned Forever</li>
+                <li><strong>Supply:</strong> Finite & Legendary</li>
+                <li><strong>Address:</strong> YOUR_TOKEN_ADDRESS_HERE</li>
+            </ul>
+        </div>
+    </section>
 );
 
 const RoadmapSection = () => (
-  <section className="content-section">
-    <h2 className="section-title">THE PATH OF THE FIST</h2>
-    <div className="roadmap">
-      <div className="roadmap-phase">
-        <h3>Phase 1: The Stare Down</h3>
-        <ul>
-          <li>✅ Launch on Pump.fun</li>
-          <li>✅ Fill Bonding Curve & Deploy to Raydium</li>
-          <li>✅ Burn Liquidity</li>
-          <li>✅ Website and Socials Live</li>
-          <li>✅ Tell CoinGecko & CMC they will list us.</li>
-        </ul>
+  <section className="roadmap-section">
+    <h2 className="section-title">PATH OF THE FIST</h2>
+    <div className="roadmap-grid">
+      <div className="roadmap-card">
+        <h4>PHASE 1</h4>
+        <p>Launch, build the Delta Force on Telegram, and trend on X through sheer force of will.</p>
       </div>
-      <div className="roadmap-phase">
-        <h3>Phase 2: The Push-Ups</h3>
-        <ul>
-          <li>🚀 1,000 Holders ("The Platoon")</li>
-          <li>🚀 Build the Telegram "Delta Force"</li>
-          <li>🚀 Trend on X through sheer force of will</li>
-        </ul>
+      <div className="roadmap-card">
+        <h4>PHASE 2</h4>
+        <p>Achieve thousands of holders, get listed on major platforms, and deliver a roundhouse kick to the charts.</p>
       </div>
-      <div className="roadmap-phase">
-        <h3>Phase 3: The Roundhouse Kick</h3>
-        <ul>
-          <li>🔥 10,000+ Holders ("The Army")</li>
-          <li>🔥 CEX Listings (Out of respect and fear)</li>
-          <li>🔥 Count to infinity. Again.</li>
-        </ul>
+      <div className="roadmap-card">
+        <h4>PHASE 3</h4>
+        <p>Global domination. CEX listings out of respect and fear. Count to infinity. Again.</p>
       </div>
     </div>
-  </section>
-);
-
-const HowToBuySection = () => (
-  <section className="content-section">
-    <h2 className="section-title">HOW TO JOIN (THE OLD-FASHIONED WAY)</h2>
-    <p>For those who prefer a manual approach.</p>
-    <ol>
-      <li><strong>GET A WALLET:</strong> Download Phantom or Solflare from the app store. Keep your seed phrase secret.</li>
-      <li><strong>GET SOME SOL:</strong> Buy Solana (SOL) on an exchange like Coinbase and send it to your wallet.</li>
-      <li><strong>GO TO JUPITER:</strong> Visit the jup.ag website in your wallet's browser.</li>
-      <li><strong>SWAP FOR $CHUCK:</strong> Paste the $CHUCK contract address and swap your SOL. Welcome to the team.</li>
-    </ol>
   </section>
 );
 
 const Footer = () => (
   <footer className="footer">
-    <p>$CHUCK © 2025. Built with pure grit.</p>
-    <p>This is a parody memecoin and has no affiliation with Chuck Norris.</p>
+    <div className="social-links">
+        <a href="YOUR_X_LINK" target="_blank" rel="noopener noreferrer">X (TWITTER)</a>
+        <span>|</span>
+        <a href="YOUR_TELEGRAM_LINK" target="_blank" rel="noopener noreferrer">TELEGRAM</a>
+    </div>
+    <p>$CHUCK © 2025. This is a parody memecoin and has no affiliation with Chuck Norris.</p>
   </footer>
 );
 
 
-// === JUPITER WIDGET AND STYLES ===
-
-const JupiterTerminalWrapper = () => {
-  useEffect(() => {
-    const initJupiter = () => {
-      if ((window as any).Jupiter) {
-        (window as any).Jupiter.init({
-          endpoint: "https://api.mainnet-beta.solana.com",
-          strictTokenList: false,
-          formProps: {
-            initialInputMint: "So11111111111111111111111111111111111111112",
-            initialOutputMint: "YOUR_TOKEN_ADDRESS_HERE", // IMPORTANT: REPLACE
-          },
-          containerClassName: 'jup-terminal',
-        });
-      }
-    };
-
-    const script = document.getElementById('jupiter-terminal-script');
-    if (!script) {
-      const newScript = document.createElement('script');
-      newScript.src = 'https://terminal.jup.ag/main-v2.js';
-      newScript.id = 'jupiter-terminal-script';
-      newScript.async = true;
-      newScript.onload = initJupiter;
-      document.head.appendChild(newScript);
-    } else {
-      initJupiter();
-    }
-  }, []);
-
-  return <div id="integrated-terminal" style={{ minHeight: '500px' }}><div className="loading-widget">Loading Terminal...</div></div>;
-};
-
+// === STYLES ===
 
 const PageStyles = () => (
   <style jsx global>{`
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+
+    :root {
+      --background: #1E1E1E;
+      --surface: #2A2A2A;
+      --primary: #FFA500;
+      --text-primary: #FFFFFF;
+      --text-secondary: #AAAAAA;
+      --shadow-light: rgba(255, 255, 255, 0.05);
+      --shadow-dark: rgba(0, 0, 0, 0.5);
+    }
 
     html, body {
       margin: 0;
       padding: 0;
-      font-family: 'Roboto', sans-serif;
-      background-color: #0a0a0a;
-      color: #ffffff;
-      background-image: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2RnaHpndDVqNnNtaG1qejd5MnNnaWRmM2V4MXBsa3htOHVobmliZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oKIPm3BynUpUysTHW/giphy.gif');
-      background-size: cover;
-      background-attachment: fixed;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--background);
+      color: var(--text-primary);
     }
     
     .container {
-      max-width: 900px;
+      max-width: 1000px;
       margin: 0 auto;
-      padding: 20px;
-      background-color: rgba(10, 10, 10, 0.85);
-      border-left: 2px solid #8B0000;
-      border-right: 2px solid #00008B;
+      padding: 2rem;
     }
     
     .hero {
       text-align: center;
-      padding: 40px 20px;
-      border-bottom: 4px ridge #c0c0c0;
+      padding: 4rem 0;
     }
 
     .mascot {
-      width: 150px;
+      width: 120px;
       height: auto;
-      margin-bottom: 20px;
+      margin-bottom: 2rem;
       image-rendering: pixelated;
     }
 
     .title {
-      font-family: 'Impact', 'Arial Black', sans-serif;
-      font-size: 3.5rem;
-      color: #FFF;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      text-shadow: 2px 2px 0 #8B0000, -2px -2px 0 #00008B;
+      font-weight: 900;
+      font-size: 5rem;
+      color: var(--primary);
       margin: 0;
+      letter-spacing: -2px;
+    }
+
+    .subtitle {
+        font-weight: 700;
+        font-size: 1.5rem;
+        margin: 0.5rem 0;
+        color: var(--text-primary);
     }
 
     .tagline {
-      font-size: 1.2rem;
-      margin: 10px 0 30px;
-      color: #c0c0c0;
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 1.5rem auto 2.5rem auto;
+      color: var(--text-secondary);
+      line-height: 1.6;
     }
 
     .cta-buttons {
       display: flex;
       justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
+      gap: 1rem;
     }
 
     .btn {
       display: inline-block;
-      padding: 12px 25px;
-      font-family: 'Impact', sans-serif;
-      font-size: 1.2rem;
-      text-transform: uppercase;
-      color: #fff;
-      background: linear-gradient(180deg, #444 0%, #111 100%);
-      border: 2px solid #c0c0c0;
-      border-radius: 5px;
+      padding: 1rem 2rem;
+      font-weight: 700;
+      font-size: 1rem;
+      border-radius: 12px;
       text-decoration: none;
-      box-shadow: 0px 4px 8px rgba(0,0,0,0.5);
+      cursor: pointer;
+      border: none;
       transition: all 0.2s ease-in-out;
     }
 
-    .btn:hover {
-      background: linear-gradient(180deg, #555 0%, #222 100%);
-      transform: translateY(-2px);
-      box-shadow: 0px 6px 12px rgba(0,0,0,0.7);
+    .btn-primary {
+      background-color: var(--primary);
+      color: var(--background);
+      box-shadow: 0px 4px 15px rgba(255, 165, 0, 0.2);
     }
-    
-    .widget-section, .content-section {
-        padding: 40px 20px;
-        margin: 20px 0;
-        border: 2px solid #555;
-        background-color: rgba(0, 0, 0, 0.5);
+    .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0px 6px 20px rgba(255, 165, 0, 0.3);
     }
 
-    .section-title {
-      font-family: 'Impact', 'Arial Black', sans-serif;
-      font-size: 2.5rem;
-      text-align: center;
-      text-transform: uppercase;
-      color: #FFF;
-      margin-bottom: 10px;
+    .btn-secondary {
+      background-color: var(--surface);
+      color: var(--text-primary);
+      box-shadow: -4px -4px 8px var(--shadow-light), 4px 4px 8px var(--shadow-dark);
     }
-    
-    .section-subtitle {
-        text-align: center;
-        margin-top: -10px;
-        margin-bottom: 30px;
-        color: #c0c0c0;
+    .btn-secondary:hover {
+        background-color: #333;
     }
 
-    .widget-container {
-      border: 4px ridge #c0c0c0;
-      padding: 10px;
-      background-color: #111;
-    }
-    
-    .loading-widget {
-        text-align: center;
-        padding: 50px;
-        font-size: 1.5rem;
-        font-family: 'Impact', sans-serif;
+    .info-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin: 4rem 0;
     }
 
-    .token-details p {
-        font-size: 1.1rem;
-        line-height: 1.6;
+    .info-card {
+        background: var(--surface);
+        padding: 2rem;
+        border-radius: 20px;
+        box-shadow: inset -5px -5px 10px var(--shadow-dark), inset 5px 5px 10px var(--shadow-light);
     }
 
-    .roadmap {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .roadmap-phase {
-        border-left: 4px solid #8B0000;
-        padding-left: 20px;
-    }
-    
-    .roadmap-phase h3 {
+    .info-card h3 {
+        font-weight: 900;
+        font-size: 1.25rem;
+        color: var(--primary);
         margin-top: 0;
-        font-family: 'Impact', sans-serif;
-    }
-
-    ol {
-        padding-left: 20px;
     }
     
-    li {
-        margin-bottom: 10px;
+    .info-card ul {
+        list-style: none;
+        padding: 0;
+    }
+    .info-card li {
+        margin-bottom: 0.5rem;
+    }
+
+    .roadmap-section {
+        text-align: center;
+        margin: 6rem 0;
+    }
+    
+    .section-title {
+        font-weight: 900;
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .roadmap-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        text-align: left;
+    }
+
+    .roadmap-card {
+        background: var(--surface);
+        padding: 1.5rem;
+        border-radius: 20px;
+        border-left: 4px solid var(--primary);
+    }
+
+    .roadmap-card h4 {
+        margin: 0 0 0.5rem 0;
+        font-weight: 700;
     }
 
     .footer {
       text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-      border-top: 4px ridge #c0c0c0;
-      color: #aaa;
-    }
-    
-    a {
-        color: #ff4500;
+      padding: 2rem;
+      margin-top: 4rem;
+      border-top: 1px solid var(--surface);
+      color: var(--text-secondary);
     }
 
-    /* Jupiter Terminal Specific Styles */
-    .jup-terminal {
-        font-family: 'Roboto', sans-serif !important;
+    .social-links a {
+        color: var(--text-secondary);
+        text-decoration: none;
+        margin: 0 1rem;
+        font-weight: 700;
+    }
+    .social-links a:hover {
+        color: var(--primary);
     }
   `}</style>
 );
