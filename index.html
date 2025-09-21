@@ -17,46 +17,44 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
     
     <script src="https://cdn.tailwindcss.com"></script>
     
     <style>
         /* Custom CSS Variables & Base Styles */
         :root {
-            --background: #1E1E1E;
-            --surface: #2A2A2A;
-            --primary: #FFA500; /* Orange Accent */
-            --text-primary: #FFFFFF;
-            --text-secondary: #AAAAAA;
-            --shadow-light: rgba(255, 255, 255, 0.05);
-            --shadow-dark: rgba(0, 0, 0, 0.5);
+            --bg-color: #F5F1E8; /* Parchment/Sand */
+            --primary-red: #B22222; /* Firebrick Red */
+            --secondary-blue: #2C3E50; /* Midnight Blue */
+            --text-dark: #1A1A1A;
+            --font-header: 'Black Ops One', sans-serif;
+            --font-body: 'Roboto Slab', serif;
         }
 
         body {
-            background-color: var(--background);
-            font-family: 'Inter', sans-serif;
-            color: var(--text-primary);
+            background-color: var(--bg-color);
+            font-family: var(--font-body);
+            color: var(--text-dark);
+            background-image: url('data:image/svg+xml,%3Csvg width="6" height="6" viewBox="0 0 6 6" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%239C92AC" fill-opacity="0.1"%3E%3Cpath d="M5 0h1L0 6V5zM6 5v1H5z"/%3E%3C/g%3E%3C/svg%3E');
         }
 
-        .font-headline { font-family: 'Inter', sans-serif; font-weight: 900; }
-        .font-title { font-family: 'Inter', sans-serif; font-weight: 900; }
-        .text-primary { color: var(--primary); }
-        .bg-primary { background-color: var(--primary); }
-
+        .font-headline { font-family: var(--font-header); }
+        .font-title { font-family: var(--font-header); }
+        
         /* Card Flip Animation */
         .flip-card { perspective: 1000px; }
         .flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s; transform-style: preserve-3d; }
         .flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
         .flip-card-front, .flip-card-back { position: absolute; width: 100%; height: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden; display: flex; align-items: center; justify-content: center; flex-direction: column; padding: 1rem; }
-        .flip-card-back { transform: rotateY(180deg); }
+        .flip-card-back { transform: rotateY(180deg); background-color: var(--secondary-blue); color: #fff; border-radius: 0.5rem; }
         
         /* Toast Notification for Copy */
         #toast {
             visibility: hidden;
             min-width: 250px;
-            background-color: var(--primary);
-            color: #000;
+            background-color: var(--secondary-blue);
+            color: #fff;
             text-align: center;
             border-radius: 8px;
             padding: 16px;
@@ -75,113 +73,126 @@
         }
     </style>
 </head>
-<body class="bg-background text-text-primary">
+<body class="bg-bg-color text-text-dark">
 
-    <header class="relative overflow-hidden">
-        <div class="container mx-auto px-6 py-24 text-center">
-            <img src="https://i.ibb.co/L5r4J5T/chuck-pixel-kick.png" alt="Stylized mascot" class="w-32 h-32 mx-auto mb-6">
-            <h1 class="font-title text-5xl md:text-7xl lg:text-8xl uppercase tracking-tighter text-white">CHUCK</h1>
-            <h2 class="font-headline text-3xl md:text-5xl text-primary mt-2">Roundhouse the market</h2>
-            <p class="mt-4 text-lg md:text-xl text-text-secondary max-w-2xl mx-auto">Legendary memecoin energy. Parody tribute. Community chaos.</p>
-            
-            <div class="mt-8 flex justify-center items-center space-x-4">
-                <a href="#" class="font-headline text-xl bg-primary text-background px-8 py-3 rounded-xl shadow-lg transition-transform transform hover:scale-105" style="box-shadow: 0px 4px 15px rgba(255, 165, 0, 0.2);">Buy CHUCK</a>
-                <a href="#lore" class="font-headline text-xl bg-surface text-text-primary px-8 py-3 rounded-xl shadow-lg transition-transform transform hover:scale-105" style="box-shadow: -4px -4px 8px var(--shadow-light), 4px 4px 8px var(--shadow-dark);">Read Lore</a>
+    <div class="container mx-auto px-6">
+        <nav class="flex justify-between items-center py-4 border-b-4 border-double border-text-dark">
+            <div class="font-title text-4xl text-primary-red">$CHUCK</div>
+            <div class="hidden md:flex items-center space-x-8 font-headline">
+                <a href="#lore" class="text-secondary-blue hover:text-primary-red">Lore</a>
+                <a href="#roadmap" class="text-secondary-blue hover:text-primary-red">Roadmap</a>
+                <a href="#" class="text-secondary-blue hover:text-primary-red">Community</a>
             </div>
-            <p class="mt-4 text-xs text-gray-500"><strong>Parody Notice:</strong> Not endorsed by any real-life legend. Not financial advice.</p>
-        </div>
+        </nav>
+    </div>
 
-        <div id="fact-ticker-container" class="w-full bg-black bg-opacity-30 py-2 text-center">
-            <p id="fact-ticker" class="font-mono text-sm text-primary"></p>
+    <header class="text-center py-16 md:py-24 border-b-4 border-double border-text-dark mb-16">
+        <div class="container mx-auto px-6">
+            <h1 class="font-title text-5xl md:text-7xl lg:text-8xl uppercase text-primary-red" style="text-shadow: 2px 2px 0px var(--secondary-blue), 4px 4px 0px rgba(0,0,0,0.2);">CHUCK</h1>
+            <h2 class="font-headline text-3xl md:text-5xl text-secondary-blue mt-2">Roundhouse the market</h2>
+            <p class="mt-4 text-lg md:text-xl max-w-2xl mx-auto">Legendary memecoin energy. Parody tribute. Community chaos.</p>
+            
+             <div class="my-8 inline-block border-4 border-secondary-blue bg-white shadow-lg" style="box-shadow: 8px 8px 0 var(--primary-red);">
+                <img src="https://i.ibb.co/L5r4J5T/chuck-pixel-kick.png" alt="Stylized mascot" class="w-32 h-32" style="image-rendering: pixelated;">
+            </div>
+
+            <div class="mt-4 flex justify-center items-center space-x-4">
+                <a href="#" class="font-headline text-xl bg-primary-red text-white px-8 py-3 transition-transform transform hover:scale-105">Buy CHUCK</a>
+                <a href="#lore" class="font-headline text-xl bg-transparent text-secondary-blue border-2 border-secondary-blue px-8 py-3 hover:bg-secondary-blue hover:text-white transition-all">Read Lore</a>
+            </div>
+            <p class="mt-6 text-xs text-gray-600"><strong>Parody Notice:</strong> Not endorsed by any real-life legend. Not financial advice.</p>
+        </div>
+         <div id="fact-ticker-container" class="w-full bg-secondary-blue text-white mt-12 py-2">
+            <p id="fact-ticker" class="font-mono text-sm"></p>
         </div>
     </header>
 
     <main class="container mx-auto px-6 py-12">
-        <section class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 text-center mb-16">
-            <div class="bg-surface p-4 rounded-2xl" style="box-shadow: -5px -5px 10px var(--shadow-light), 5px 5px 10px var(--shadow-dark);">
-                <h3 class="font-headline text-lg text-primary">Supply</h3>
-                <p class="text-2xl font-bold">1B</p>
+        <section class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 text-center mb-24">
+            <div class="bg-white p-4 rounded-lg border-2 border-text-dark shadow-md">
+                <h3 class="font-headline text-lg text-secondary-blue">Supply</h3>
+                <p class="text-2xl font-bold font-sans">1B</p>
             </div>
-            <div class="bg-surface p-4 rounded-2xl" style="box-shadow: -5px -5px 10px var(--shadow-light), 5px 5px 10px var(--shadow-dark);">
-                <h3 class="font-headline text-lg text-primary">Dev Reward</h3>
-                <p class="text-2xl font-bold">0%</p>
+            <div class="bg-white p-4 rounded-lg border-2 border-text-dark shadow-md">
+                <h3 class="font-headline text-lg text-secondary-blue">Dev Reward</h3>
+                <p class="text-2xl font-bold font-sans">0%</p>
             </div>
-            <div class="bg-surface p-4 rounded-2xl" style="box-shadow: -5px -5px 10px var(--shadow-light), 5px 5px 10px var(--shadow-dark);">
-                <h3 class="font-headline text-lg text-primary">Liquidity</h3>
-                <p class="text-green-400 font-bold">Locked ✅</p>
+            <div class="bg-white p-4 rounded-lg border-2 border-text-dark shadow-md">
+                <h3 class="font-headline text-lg text-secondary-blue">Liquidity</h3>
+                <p class="text-green-600 font-bold">Locked ✅</p>
             </div>
-            <div class="bg-surface p-4 rounded-2xl" style="box-shadow: -5px -5px 10px var(--shadow-light), 5px 5px 10px var(--shadow-dark);">
-                <h3 class="font-headline text-lg text-primary">Max Wallet</h3>
-                <p class="text-2xl font-bold">1%</p>
+            <div class="bg-white p-4 rounded-lg border-2 border-text-dark shadow-md">
+                <h3 class="font-headline text-lg text-secondary-blue">Max Wallet</h3>
+                <p class="text-2xl font-bold font-sans">1%</p>
             </div>
-             <div class="bg-surface p-4 rounded-2xl col-span-2 lg:col-span-1" style="box-shadow: -5px -5px 10px var(--shadow-light), 5px 5px 10px var(--shadow-dark);">
-                <h3 class="font-headline text-lg text-primary">Contract</h3>
-                <p class="text-green-400 font-bold">Verified ✅</p>
+             <div class="bg-white p-4 rounded-lg border-2 border-text-dark shadow-md col-span-2 lg:col-span-1">
+                <h3 class="font-headline text-lg text-secondary-blue">Contract</h3>
+                <p class="text-green-600 font-bold">Verified ✅</p>
             </div>
         </section>
 
-        <section class="mb-16">
-            <h2 class="font-title text-4xl text-center text-primary mb-8">How to Ape In</h2>
+        <section class="mb-24 bg-white p-8 border-2 border-text-dark shadow-lg" style="box-shadow: 10px 10px 0px var(--secondary-blue);">
+            <h2 class="font-title text-4xl text-center text-primary-red mb-8">How to Ape In</h2>
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="text-center p-6 bg-surface rounded-2xl" style="box-shadow: -5px -5px 10px var(--shadow-light), 5px 5px 10px var(--shadow-dark);">
+                <div class="text-center">
                     <div class="text-6xl mb-2">📥</div>
-                    <h3 class="font-headline text-2xl text-primary">1. Get a Wallet</h3>
-                    <p class="text-text-secondary">Use a Solana wallet like Phantom or Solflare.</p>
+                    <h3 class="font-headline text-2xl text-secondary-blue">1. Get a Wallet</h3>
+                    <p>Use a Solana wallet like Phantom or Solflare.</p>
                 </div>
-                <div class="text-center p-6 bg-surface rounded-2xl" style="box-shadow: -5px -5px 10px var(--shadow-light), 5px 5px 10px var(--shadow-dark);">
+                <div class="text-center">
                     <div class="text-6xl mb-2">📋</div>
-                    <h3 class="font-headline text-2xl text-primary">2. Paste Contract</h3>
-                    <p class="text-text-secondary">Paste the contract address on pump.fun or Raydium.</p>
+                    <h3 class="font-headline text-2xl text-secondary-blue">2. Paste Contract</h3>
+                    <p>Paste the contract address on pump.fun or Raydium.</p>
                 </div>
-                <div class="text-center p-6 bg-surface rounded-2xl" style="box-shadow: -5px -5px 10px var(--shadow-light), 5px 5px 10px var(--shadow-dark);">
+                <div class="text-center">
                     <div class="text-6xl mb-2">🔄</div>
-                    <h3 class="font-headline text-2xl text-primary">3. Confirm Swap</h3>
-                    <p class="text-text-secondary">Set slippage to 1-3% and confirm. Welcome to the dojo.</p>
+                    <h3 class="font-headline text-2xl text-secondary-blue">3. Confirm Swap</h3>
+                    <p>Set slippage to 1-3% and confirm. Welcome to the dojo.</p>
                 </div>
             </div>
-            <div class="mt-8 text-center bg-surface p-4 rounded-2xl" style="box-shadow: -5px -5px 10px var(--shadow-light), 5px 5px 10px var(--shadow-dark);">
-                <p class="text-primary font-headline">CONTRACT ADDRESS (SOLANA)</p>
+            <div class="mt-8 text-center bg-gray-100 p-4 rounded-lg border border-gray-300">
+                <p class="text-secondary-blue font-headline">CONTRACT ADDRESS (SOLANA)</p>
                 <div class="flex justify-center items-center mt-2">
-                    <code id="contract-address" class="text-sm md:text-base bg-background p-2 rounded-l-md text-text-secondary">YourSOLe...naContractAddressHere...CHUCK</code>
-                    <button id="copy-button" class="bg-primary text-background px-4 py-2 rounded-r-md font-headline">Copy</button>
+                    <code id="contract-address" class="text-sm md:text-base bg-gray-200 p-2 rounded-l-md text-text-dark break-all">YourSOLe...naContractAddressHere...CHUCK</code>
+                    <button id="copy-button" class="bg-primary-red text-white px-4 py-2 rounded-r-md font-headline">Copy</button>
                 </div>
             </div>
         </section>
 
-        <section id="lore" class="mb-16">
-            <h2 class="font-title text-4xl text-center text-primary mb-2">The Lore</h2>
-            <p class="text-center text-text-secondary max-w-3xl mx-auto mb-8">CHUCK isn't a token, it's a legend. A force of nature so powerful, it makes charts do pushups. These are the undisputed facts of the CHUCK-verse. Read them. Learn them. Meme them.</p>
+        <section id="lore" class="mb-24">
+            <h2 class="font-title text-4xl text-center text-primary-red mb-2">The Lore</h2>
+            <p class="text-center max-w-3xl mx-auto mb-8">CHUCK isn't a token, it's a legend. A force of nature so powerful, it makes charts do pushups. These are the undisputed facts of the CHUCK-verse. Read them. Learn them. Meme them.</p>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="lore-cards">
                 </div>
         </section>
 
-        <section class="mb-16">
-             <h2 class="font-title text-4xl text-center text-primary mb-8">Meme Gallery</h2>
+        <section class="mb-24">
+             <h2 class="font-title text-4xl text-center text-primary-red mb-8">Meme Gallery</h2>
             <div class="text-center mb-8">
-                <button class="bg-primary text-background font-headline px-6 py-3 rounded-xl shadow-lg" style="box-shadow: 0px 4px 15px rgba(255, 165, 0, 0.2);">Submit a Meme (Win 10k CHUCK)</button>
+                <button class="bg-primary-red text-white font-headline px-6 py-3 rounded-md shadow-lg">Submit a Meme (Win 10k CHUCK)</button>
             </div>
              <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" id="meme-gallery">
                 </div>
         </section>
 
         <section id="roadmap" class="mb-16">
-            <h2 class="font-title text-4xl text-center text-primary mb-12">The Roadmap</h2>
+            <h2 class="font-title text-4xl text-center text-primary-red mb-12">The Roadmap</h2>
             <div class="relative">
-                <div class="border-l-4 border-primary border-opacity-30 absolute h-full top-0 left-1/2 -ml-0.5"></div>
+                <div class="border-l-4 border-secondary-blue absolute h-full top-0 left-1/2 -ml-0.5"></div>
                 </div>
         </section>
         
     </main>
 
-    <footer class="bg-base border-t-2 border-surface mt-16 py-8">
-        <div class="container mx-auto px-6 text-center text-text-secondary">
+    <footer class="bg-secondary-blue text-white mt-16 py-8">
+        <div class="container mx-auto px-6 text-center">
             <div class="flex justify-center space-x-6 mb-4">
-                <a href="#" class="hover:text-primary">Telegram</a>
-                <a href="#" class="hover:text-primary">X (Twitter)</a>
-                <a href="#" class="hover:text-primary">Discord</a>
+                <a href="#" class="hover:text-primary-red">Telegram</a>
+                <a href="#" class="hover:text-primary-red">X (Twitter)</a>
+                <a href="#" class="hover:text-primary-red">Discord</a>
             </div>
             <p class="text-sm"><strong>Parody Notice:</strong> CHUCK is a satirical memecoin inspired by classic roundhouse lore. Not affiliated with or endorsed by any living person. Not financial advice.</p>
-            <p class="text-xs mt-2">&copy; 2025 CHUCK Token. All rights reserved.</p>
+            <p class="text-xs mt-2 opacity-70">&copy; 2025 CHUCK Token. All rights reserved.</p>
         </div>
     </footer>
 
@@ -207,7 +218,7 @@
                     factIndex = (factIndex + 1) % facts.length;
                     factTicker.textContent = facts[factIndex];
                     factTicker.style.opacity = 1;
-                }, 500);
+                }, 300);
             }
             if(factTicker) {
                 updateFact();
@@ -240,13 +251,13 @@
             if(loreContainer) {
                 loreFacts.forEach(fact => {
                     const card = `
-                        <div class="flip-card bg-surface rounded-2xl h-48" style="box-shadow: -5px -5px 10px var(--shadow-light), 5px 5px 10px var(--shadow-dark);">
+                        <div class="flip-card bg-white rounded-lg h-48 border-2 border-text-dark" style="box-shadow: 5px 5px 0px var(--secondary-blue);">
                             <div class="flip-card-inner">
                                 <div class="flip-card-front">
-                                    <h3 class="font-headline text-2xl text-primary">${fact.title}</h3>
+                                    <h3 class="font-headline text-2xl text-primary-red">${fact.title}</h3>
                                 </div>
-                                <div class="flip-card-back bg-primary rounded-2xl">
-                                    <p class="text-background font-bold">${fact.text}</p>
+                                <div class="flip-card-back">
+                                    <p class="font-bold">${fact.text}</p>
                                 </div>
                             </div>
                         </div>`;
@@ -269,12 +280,11 @@
              if(memeGallery) {
                 memes.forEach(meme => {
                     const memeEl = document.createElement('div');
-                    memeEl.className = "bg-surface p-2 rounded-xl";
-                    memeEl.style.boxShadow = "-5px -5px 10px var(--shadow-light), 5px 5px 10px var(--shadow-dark)";
+                    memeEl.className = "bg-white p-2 rounded-lg border-2 border-text-dark";
                     memeEl.innerHTML = `
-                        <img src="${meme.img}" alt="${meme.caption}" class="w-full h-auto rounded-lg object-cover aspect-square" loading="lazy">
+                        <img src="${meme.img}" alt="${meme.caption}" class="w-full h-auto rounded-md object-cover aspect-square" loading="lazy">
                         <p class="text-sm mt-2">“${meme.caption}”</p>
-                        <p class="text-xs text-primary">${meme.author}</p>`;
+                        <p class="text-xs text-primary-red font-bold">${meme.author}</p>`;
                     memeGallery.appendChild(memeEl);
                 });
             }
@@ -282,11 +292,10 @@
             // --- Roadmap ---
             const roadmapContainer = document.querySelector('#roadmap .relative');
             const milestones = [
-                { title: 'Meme & Lore', desc: 'Establish the legend. Build the myth.', side: 'left' },
-                { title: 'Launch', desc: 'Deploy on pump.fun. The legend begins.', side: 'right' },
-                { title: 'Liquidity Lock', desc: 'Liquidity is locked and the keys are thrown away.', side: 'left' },
-                { title: 'Merch Drop', desc: 'Legendary gear for the community.', side: 'right' },
-                { title: 'Community Governance', desc: 'Holders vote on the next legendary feat.', side: 'left' },
+                { title: 'Infiltration', desc: 'Establish the legend. Build the myth.', side: 'left' },
+                { title: 'Shock & Awe', desc: 'Deploy on pump.fun. The legend begins.', side: 'right' },
+                { title: 'Market Dominance', desc: 'Liquidity is locked and the keys are thrown away.', side: 'left' },
+                { title: 'Global Stage', desc: 'Legendary gear for the community.', side: 'right' },
             ];
 
             if(roadmapContainer) {
@@ -298,12 +307,12 @@
                     const milestoneEl = `
                         <div class="mb-8 flex justify-between items-center w-full ${containerClass}">
                             <div class="order-1 md:w-5/12"></div>
-                            <div class="z-20 flex items-center order-1 bg-primary shadow-xl w-8 h-8 rounded-full">
-                                <h1 class="mx-auto font-semibold text-lg text-background">${index + 1}</h1>
+                            <div class="z-20 flex items-center order-1 bg-primary-red shadow-xl w-8 h-8 rounded-full">
+                                <h1 class="mx-auto font-semibold text-lg text-white">${index + 1}</h1>
                             </div>
-                            <div class="order-1 bg-surface rounded-2xl shadow-xl w-full md:w-5/12 p-4 ${sideClass} ${textAlign}" style="box-shadow: -5px -5px 10px var(--shadow-light), 5px 5px 10px var(--shadow-dark);">
-                                <h3 class="font-headline mb-3 text-primary text-xl">${item.title}</h3>
-                                <p class="text-sm leading-snug tracking-wide text-text-secondary">${item.desc}</p>
+                            <div class="order-1 bg-white rounded-lg shadow-xl w-full md:w-5/12 p-4 border-2 border-text-dark ${sideClass} ${textAlign}">
+                                <h3 class="font-headline mb-3 text-secondary-blue text-xl">${item.title}</h3>
+                                <p class="text-sm leading-snug tracking-wide text-gray-700">${item.desc}</p>
                             </div>
                         </div>`;
                     roadmapContainer.innerHTML += milestoneEl;
