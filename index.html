@@ -3,213 +3,546 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CHUCK — Roundhouse the market (CHUCK token)</title>
+    <title>CHUCK — The Unwavering Token</title>
     
-    <meta name="description" content="CHUCK is a parody memecoin built for degens who like their humor with a roundhouse. Liquidity locked, community-first.">
-    <meta property="og:title" content="CHUCK — Roundhouse the market (CHUCK token)">
-    <meta property="og:description" content="CHUCK is a parody memecoin built for degens who like their humor with a roundhouse. Liquidity locked, community-first.">
-    <meta property="og:image" content="https://storage.googleapis.com/gemini-generative-ai-api-file-cache/214a1e95-7798-422f-ae52-c0e816a3c5a8/og_image.jpg">
-    <meta property="og:url" content="YOUR_WEBSITE_URL">
+    <meta name="description" content="CHUCK is a parody memecoin built on principles: Freedom, Family, Fitness, Faith & Fight. Liquidity locked, community-first.">
+    <meta property="og:title" content="CHUCK — The Unwavering Token">
+    <meta property="og:description" content="CHUCK is a parody memecoin built on principles: Freedom, Family, Fitness, Faith & Fight. Liquidity locked, community-first.">
+    <meta property="og:image" content="https://i.imgur.com/hDaT1fN.jpeg"> <meta property="og:url" content="YOUR_WEBSITE_URL">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="CHUCK — Roundhouse the market (CHUCK token)">
-    <meta name="twitter:description" content="CHUCK is a parody memecoin built for degens who like their humor with a roundhouse. Liquidity locked, community-first.">
-    <meta name="twitter:image" content="https://storage.googleapis.com/gemini-generative-ai-api-file-cache/214a1e95-7798-422f-ae52-c0e816a3c5a8/og_image.jpg">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <meta name="twitter:title" content="CHUCK — The Unwavering Token">
+    <meta name="twitter:description" content="CHUCK is a parody memecoin built on principles: Freedom, Family, Fitness, Faith & Fight. Liquidity locked, community-first.">
+    <meta name="twitter:image" content="https://i.imgur.com/hDaT1fN.jpeg"> <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
     
     <script src="https://cdn.tailwindcss.com"></script>
     
     <style>
-        /* Custom CSS Variables & Base Styles */
+        /* --- Color Palette from Image --- */
         :root {
-            --primary: #FF7A18; /* sunset orange */
-            --accent: #37422E;  /* olive */
-            --highlight: #CBA86B; /* sepia */
-            --base: #0B0B0B;
-            --cream: #FAF4E6;
+            --primary-red: #B22222; /* Flag Red - Firebrick */
+            --primary-blue: #0A1128; /* Dark Blue from "Approved" seal */
+            --off-white: #F5F5DC; /* Creamy background of the card */
+            --gold-accent: #DAA520; /* Gold/Bronze for highlights */
+            --dark-text: #212121; /* Dark grey for main text */
+            --light-text: #FFFFFF; /* White text */
         }
+
+        /* --- Typography --- */
+        .font-serif-title { font-family: 'Merriweather', serif; } /* For strong titles */
+        .font-sans-body { font-family: 'Open Sans', sans-serif; } /* For readable body text */
+        .font-script { font-family: 'Great Vibes', cursive; } /* For Chuck Norris signature style */
 
         body {
-            background-color: var(--base);
-            font-family: 'Inter', sans-serif;
-            color: var(--cream);
+            background-color: var(--off-white);
+            color: var(--dark-text);
+            font-family: var(--font-sans-body);
+            line-height: 1.6;
         }
 
-        .font-headline { font-family: 'Bebas Neue', sans-serif; }
-        .font-title { font-family: 'Anton', sans-serif; }
-        .text-primary { color: var(--primary); }
-        .bg-primary { background-color: var(--primary); }
-        .border-primary { border-color: var(--primary); }
-
-        /* Hero VHS Overlay */
-        .vhs-overlay {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAQAAAAziH6sAAAADklEQVR42mNkaAqAAABkAAn8102iAAAAAElFTkSuQmCC');
-            opacity: 0.1;
-            pointer-events: none;
-            animation: scanlines 0.2s linear infinite;
-        }
-        @keyframes scanlines {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(100%); }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
         }
 
-        /* Card Flip Animation */
-        .flip-card { perspective: 1000px; }
-        .flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s; transform-style: preserve-3d; }
-        .flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
-        .flip-card-front, .flip-card-back { position: absolute; width: 100%; height: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden; display: flex; align-items: center; justify-content: center; flex-direction: column; padding: 1rem; }
-        .flip-card-back { transform: rotateY(180deg); }
-        
-        /* Toast Notification for Copy */
-        #toast {
-            visibility: hidden;
-            min-width: 250px;
-            background-color: var(--accent);
-            color: #fff;
+        /* --- Custom Components --- */
+        .header-section {
+            background-color: var(--primary-blue);
+            color: var(--light-text);
+            padding: 2rem 0;
+            border-bottom: 4px solid var(--primary-red); /* Strong horizontal divider */
+        }
+
+        .hero-section {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect x="0" y="0" width="100" height="100" fill="%23B22222"/><rect x="0" y="20" width="100" height="10" fill="%23FFFFFF"/><rect x="0" y="40" width="100" height="10" fill="%23FFFFFF"/><rect x="0" y="60" width="100" height="10" fill="%23FFFFFF"/><rect x="0" y="80" width="100" height="10" fill="%23FFFFFF"/><rect x="0" y="0" width="40" height="50" fill="%230A1128"/><circle cx="20" cy="25" r="15" fill="%23FFFFFF"/><path d="M20 15 L25 35 L15 35 Z" fill="%230A1128"/></svg>');
+            background-size: 150px 150px; /* Small, tiled flag pattern */
+            background-blend-mode: multiply; /* Blend with background-color */
+            background-color: rgba(178, 34, 34, 0.1); /* Very subtle red tint */
+            padding: 6rem 0 4rem 0;
             text-align: center;
-            border-radius: 8px;
-            padding: 16px;
-            position: fixed;
-            z-index: 50;
-            left: 50%;
-            transform: translateX(-50%);
-            bottom: 30px;
-            opacity: 0;
+            border-bottom: 4px solid var(--primary-red);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-badge {
+            background-color: var(--off-white);
+            border: 4px solid var(--primary-blue);
+            border-radius: 50%;
+            padding: 1rem;
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+            margin-bottom: 2rem;
+            max-width: 200px;
+            max-height: 200px;
+        }
+
+        .hero-badge img {
+            max-width: 100px;
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-title {
+            font-family: var(--font-serif-title);
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            color: var(--primary-blue);
+            text-shadow: 2px 2px 0px var(--primary-red);
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            font-family: var(--font-serif-title);
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            color: var(--dark-text);
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            font-family: var(--font-sans-body);
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease-in-out;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-red);
+            color: var(--light-text);
+            border-color: var(--primary-red);
+        }
+        .btn-primary:hover {
+            background-color: #A01C1C;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary-blue);
+            border-color: var(--primary-blue);
+        }
+        .btn-secondary:hover {
+            background-color: var(--primary-blue);
+            color: var(--light-text);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .section-title {
+            font-family: var(--font-serif-title);
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            color: var(--primary-blue);
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-top: 1rem;
+            border-bottom: 3px solid var(--primary-red);
+            display: inline-block; /* For the border to hug text */
+            padding-bottom: 0.5rem;
+            text-shadow: 1px 1px 0px rgba(0,0,0,0.1);
+        }
+
+        .info-card {
+            background-color: var(--light-text);
+            border: 2px solid var(--primary-blue);
+            padding: 1.5rem;
+            border-radius: 6px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        .info-card:hover { transform: translateY(-5px); }
+        .info-card h3 {
+            font-family: var(--font-serif-title);
+            color: var(--primary-red);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .info-card p {
+            color: var(--dark-text);
+        }
+
+        .contract-box {
+            background-color: var(--primary-blue);
+            color: var(--light-text);
+            padding: 1.5rem;
+            border-radius: 6px;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        .contract-box code {
+            background-color: rgba(255,255,255,0.1);
+            padding: 0.75rem 1rem;
+            border-radius: 4px;
+            display: block;
+            margin-bottom: 1rem;
+            font-family: monospace;
+            word-break: break-all;
+        }
+        .copy-button {
+            background-color: var(--primary-red);
+            color: var(--light-text);
+            padding: 0.75rem 2rem;
+            border-radius: 4px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .copy-button:hover { background-color: #A01C1C; }
+
+        /* Fact Ticker */
+        #fact-ticker-container {
+            background-color: rgba(0,0,0,0.7); /* Dark semi-transparent band */
+            color: var(--gold-accent); /* Gold text for emphasis */
+            padding: 0.5rem 0;
+            text-align: center;
+            font-family: 'Open Sans', sans-serif; /* Clean font for facts */
+            font-size: 0.9rem;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Toast Notification */
+        #toast {
+            visibility: hidden; min-width: 250px; background-color: var(--primary-blue); color: #fff; text-align: center;
+            border-radius: 8px; padding: 16px; position: fixed; z-index: 100; left: 50%;
+            transform: translateX(-50%); bottom: 30px; opacity: 0;
             transition: visibility 0s 0.5s, opacity 0.5s linear;
         }
-        #toast.show {
-            visibility: visible;
-            opacity: 1;
-            transition: opacity 0.5s linear;
+        #toast.show { visibility: visible; opacity: 1; transition: opacity 0.5s linear; }
+
+        /* Lore Cards - Flip Animation */
+        .flip-card { perspective: 1000px; height: 180px; } /* Fixed height for consistency */
+        .flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s; transform-style: preserve-3d; }
+        .flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
+        .flip-card-front, .flip-card-back {
+            position: absolute; width: 100%; height: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden;
+            display: flex; align-items: center; justify-content: center; flex-direction: column; padding: 1.5rem;
+            border-radius: 6px; /* Match info cards */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .flip-card-front {
+            background-color: var(--light-text);
+            border: 2px solid var(--primary-blue);
+            color: var(--dark-text);
+        }
+        .flip-card-front h3 {
+            font-family: var(--font-serif-title);
+            color: var(--primary-red);
+            font-size: 1.6rem;
+        }
+        .flip-card-back {
+            background-color: var(--primary-blue);
+            color: var(--light-text);
+            border: 2px solid var(--primary-red);
+            transform: rotateY(180deg);
+        }
+        .flip-card-back p { font-family: var(--font-sans-body); font-size: 1rem; }
+
+        /* Meme Gallery */
+        .meme-tile {
+            background-color: var(--light-text);
+            padding: 0.75rem;
+            border-radius: 6px;
+            border: 2px solid var(--primary-blue);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .meme-tile:hover {
+            transform: translateY(-3px);
+            border-color: var(--gold-accent);
+        }
+        .meme-tile img {
+            width: 100%;
+            height: 180px; /* Consistent height for memes */
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+        }
+        .meme-tile .caption {
+            font-size: 0.9rem;
+            color: var(--dark-text);
+            font-weight: 700;
+        }
+        .meme-tile .author {
+            font-size: 0.8rem;
+            color: var(--primary-red);
+            font-family: var(--font-sans-body);
+        }
+
+        /* Lightbox */
+        .modal {
+            display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%;
+            overflow: auto; background-color: rgba(0,0,0,0.9);
+            animation: fadeIn 0.3s;
+        }
+        .modal-content {
+            margin: auto; display: block; max-width: 90vw; max-height: 90vh; object-fit: contain;
+            animation: zoomIn 0.3s;
+        }
+        .modal-close {
+            position: absolute; top: 15px; right: 35px; color: #f1f1f1; font-size: 40px; font-weight: bold;
+            transition: 0.3s; cursor: pointer;
+        }
+        .modal-close:hover, .modal-close:focus { color: #bbb; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes zoomIn { from { transform: scale(0.8); } to { transform: scale(1); } }
+
+        /* FAQ Accordion */
+        .faq-item {
+            background-color: var(--light-text);
+            border: 2px solid var(--primary-blue);
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .faq-question {
+            width: 100%; padding: 1rem 1.5rem; text-align: left;
+            font-family: var(--font-serif-title); font-size: 1.2rem; color: var(--primary-blue);
+            background-color: var(--off-white); cursor: pointer;
+            display: flex; justify-content: space-between; align-items: center;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+        .faq-question:hover { background-color: #EAEAEA; }
+        .faq-answer {
+            padding: 1rem 1.5rem;
+            color: var(--dark-text);
+            border-top: 1px solid #eee;
+            display: none; /* Hidden by default */
+        }
+        .faq-arrow {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        .faq-item.active .faq-arrow { transform: rotate(45deg); }
+        .faq-item.active .faq-question { background-color: #EAEAEA; border-bottom: none; }
+
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-blue);
+            color: var(--light-text);
+            padding: 3rem 0;
+            text-align: center;
+            border-top: 4px solid var(--primary-red);
+        }
+        footer a {
+            color: var(--gold-accent);
+            text-decoration: none;
+            font-weight: 700;
+            transition: color 0.2s;
+        }
+        footer a:hover { color: var(--light-text); }
+        footer .disclaimer {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+            max-width: 800px;
+            margin: 1.5rem auto 0 auto;
+        }
+        footer .copyright {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.5);
+            margin-top: 1rem;
+        }
+
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            .hero-title { font-size: 3rem; }
+            .hero-subtitle { font-size: 1.8rem; }
+            .btn { padding: 0.8rem 2rem; font-size: 1rem; }
+            .section-title { font-size: 2rem; }
+            .header-section { padding: 1rem 0; }
+            .header-section .flex { flex-direction: column; }
+            .header-section .text-2xl { margin-bottom: 0.5rem; }
+            .header-section nav a { margin: 0 0.5rem; font-size: 0.9rem; }
+            .contract-box code { font-size: 0.8rem; }
         }
     </style>
 </head>
-<body class="bg-base text-cream">
+<body class="font-sans-body">
 
-    <header class="relative overflow-hidden border-b-4 border-primary shadow-2xl">
-        <div class="absolute inset-0 bg-black opacity-50 z-0"></div>
-        <div class="vhs-overlay z-10"></div>
-        <img src="https://storage.googleapis.com/gemini-generative-ai-api-file-cache/214a1e95-7798-422f-ae52-c0e816a3c5a8/hero_poster.jpg" alt="Stylized 80s action hero poster" class="absolute inset-0 w-full h-full object-cover opacity-30">
-        
-        <div class="container mx-auto px-6 py-24 relative z-20 text-center">
-            <div class="w-48 h-48 mx-auto mb-4 bg-contain bg-no-repeat bg-center" style="background-image: url('https://storage.googleapis.com/gemini-generative-ai-api-file-cache/214a1e95-7798-422f-ae52-c0e816a3c5a8/hero_logo.png');"></div>
-            <h1 class="font-title text-5xl md:text-7xl lg:text-8xl uppercase tracking-wider text-white" style="text-shadow: 3px 3px 0px var(--primary);">CHUCK</h1>
-            <h2 class="font-headline text-3xl md:text-5xl text-primary mt-2">Roundhouse the market</h2>
-            <p class="mt-4 text-lg md:text-xl text-cream max-w-2xl mx-auto">Legendary memecoin energy. Parody tribute. Community chaos.</p>
-            
-            <div class="mt-8 flex justify-center items-center space-x-4">
-                <a href="#" class="font-headline text-xl bg-primary text-base px-8 py-3 rounded-md shadow-lg hover:bg-opacity-80 transition-transform transform hover:scale-105">Buy CHUCK</a>
-                <a href="#lore" class="font-headline text-xl bg-accent text-cream px-8 py-3 rounded-md shadow-lg hover:bg-opacity-80 transition-transform transform hover:scale-105">Read Lore</a>
-            </div>
-            <p class="mt-4 text-xs text-gray-400"><strong>Parody Notice:</strong> Not endorsed by any real-life legend. Not financial advice.</p>
+    <div class="header-section">
+        <div class="container flex justify-between items-center flex-wrap">
+            <div class="text-2xl font-script text-light-text mb-2 md:mb-0">Chuck Norris'</div>
+            <nav class="flex space-x-4 md:space-x-8">
+                <a href="#lore" class="text-gold-accent hover:text-light-text font-serif-title">Lore</a>
+                <a href="#gallery" class="text-gold-accent hover:text-light-text font-serif-title">Memes</a>
+                <a href="#faq" class="text-gold-accent hover:text-light-text font-serif-title">FAQ</a>
+                <a href="#" class="text-gold-accent hover:text-light-text font-serif-title">Community</a>
+            </nav>
         </div>
+    </div>
 
-        <div id="fact-ticker-container" class="absolute bottom-0 left-0 w-full bg-black bg-opacity-70 py-2 text-center">
-            <p id="fact-ticker" class="font-mono text-sm text-highlight"></p>
+    <header class="hero-section">
+        <div class="container relative z-10">
+            <div class="hero-badge mx-auto">
+                <img src="https://i.imgur.com/gK20W7H.png" alt="Chuck Norris Approved Logo" class="w-24 h-24">
+                <span class="font-serif-title text-primary-blue text-sm">CHUCK NORRIS</span>
+                <span class="font-serif-title text-primary-blue text-xs leading-none">APPROVED</span>
+            </div>
+            <h1 class="hero-title">CHUCK</h1>
+            <h2 class="hero-subtitle">The Unwavering Token</h2>
+            <p class="text-lg md:text-xl text-dark-text max-w-2xl mx-auto mb-8">Inspired by the legendary Five Principles: Freedom, Family, Fitness, Faith & Fight. A memecoin with an iron will.</p>
+            
+            <div class="mt-8 flex justify-center items-center space-x-4 flex-wrap gap-4">
+                <a href="#" class="btn btn-primary">Buy $CHUCK Now</a>
+                <a href="#" class="btn btn-secondary">Join the Dojo</a>
+            </div>
+        </div>
+        <div id="fact-ticker-container">
+            <p id="fact-ticker" class="transition-opacity duration-500"></p>
         </div>
     </header>
 
-    <main class="container mx-auto px-6 py-12">
-        <section class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 text-center mb-16">
-            <div class="bg-gray-900 p-4 rounded-lg border border-accent">
-                <h3 class="font-headline text-lg text-highlight">Supply</h3>
-                <p class="text-2xl font-bold">1B</p>
-            </div>
-            <div class="bg-gray-900 p-4 rounded-lg border border-accent">
-                <h3 class="font-headline text-lg text-highlight">Dev Reward</h3>
-                <p class="text-2xl font-bold">0%</p>
-            </div>
-            <div class="bg-gray-900 p-4 rounded-lg border border-accent">
-                <h3 class="font-headline text-lg text-highlight">Liquidity</h3>
-                <p class="text-green-400 font-bold">Locked ✅</p>
-            </div>
-            <div class="bg-gray-900 p-4 rounded-lg border border-accent">
-                <h3 class="font-headline text-lg text-highlight">Max Wallet</h3>
-                <p class="text-2xl font-bold">1%</p>
-            </div>
-             <div class="bg-gray-900 p-4 rounded-lg border border-accent col-span-2 lg:col-span-1">
-                <h3 class="font-headline text-lg text-highlight">Contract</h3>
-                <p class="text-green-400 font-bold">Verified ✅</p>
+    <main class="container py-12">
+        <section class="mb-16">
+            <h2 class="section-title mx-auto">Token Overview</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-center">
+                <div class="info-card">
+                    <h3>Total Supply</h3>
+                    <p class="text-3xl font-bold font-serif-title">1 Billion</p>
+                    <p class="text-sm text-gray-600">No mint function, fixed supply.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Liquidity</h3>
+                    <p class="text-3xl font-bold text-green-600 font-serif-title">Locked & Burned ✅</p>
+                    <p class="text-sm text-gray-600">Ensuring a fair and secure launch.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Dev Wallet</h3>
+                    <p class="text-3xl font-bold font-serif-title">0% Allocation</p>
+                    <p class="text-sm text-gray-600">Community driven from day one.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Max Wallet</h3>
+                    <p class="text-3xl font-bold font-serif-title">1% of Supply</p>
+                    <p class="text-sm text-gray-600">Anti-whale measure to promote decentralization.</p>
+                </div>
+                <div class="info-card col-span-1 md:col-span-2 lg:col-span-1">
+                    <h3>Contract Status</h3>
+                    <p class="text-3xl font-bold text-green-600 font-serif-title">Verified & Renounced ✅</p>
+                    <p class="text-sm text-gray-600">Trust and transparency built in.</p>
+                </div>
             </div>
         </section>
 
         <section class="mb-16">
-            <h2 class="font-title text-4xl text-center text-primary mb-8">How to Ape In</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="text-center">
-                    <div class="text-6xl mb-2"> wallets</div>
-                    <h3 class="font-headline text-2xl text-highlight">1. Connect Wallet</h3>
-                    <p>Use a Solana wallet like Phantom or Solflare.</p>
+            <h2 class="section-title mx-auto">How to Get $CHUCK</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                <div class="info-card">
+                    <h3>1. Setup Wallet</h3>
+                    <p>Install Phantom or Solflare (Solana wallets) on your browser or mobile.</p>
                 </div>
-                <div class="text-center">
-                    <div class="text-6xl mb-2">contract</div>
-                    <h3 class="font-headline text-2xl text-highlight">2. Paste Contract</h3>
-                    <p>Paste the contract address on pump.fun or Raydium.</p>
+                <div class="info-card">
+                    <h3>2. Acquire SOL</h3>
+                    <p>Purchase Solana ($SOL) from a major exchange (e.g., Binance, Coinbase) and send it to your wallet.</p>
                 </div>
-                <div class="text-center">
-                    <div class="text-6xl mb-2">swap</div>
-                    <h3 class="font-headline text-2xl text-highlight">3. Confirm Swap</h3>
-                    <p>Set slippage to 1-3% and confirm. Welcome to the dojo.</p>
+                <div class="info-card">
+                    <h3>3. Visit DEX</h3>
+                    <p>Go to Raydium, Jupiter, or Pump.fun via your wallet's browser.</p>
+                </div>
+                <div class="info-card">
+                    <h3>4. Swap for CHUCK</h3>
+                    <p>Paste our contract address, set slippage (1-3%), and swap your SOL for CHUCK!</p>
                 </div>
             </div>
-            <div class="mt-8 text-center bg-gray-900 p-4 rounded-lg">
-                <p class="text-highlight font-headline">CONTRACT ADDRESS (SOLANA)</p>
-                <div class="flex justify-center items-center mt-2">
-                    <code id="contract-address" class="text-sm md:text-base bg-base p-2 rounded-l-md">YourSOLe...naContractAddressHere...CHUCK</code>
-                    <button id="copy-button" class="bg-primary text-base px-4 py-2 rounded-r-md font-headline">Copy</button>
-                </div>
+            <div class="contract-box">
+                <h3 class="font-serif-title text-gold-accent text-2xl mb-2">CHUCK Contract Address (SOLANA)</h3>
+                <code id="contract-address">YourSOLe...naContractAddressHere...CHUCK</code>
+                <button id="copy-button" class="copy-button">Copy Contract Address</button>
             </div>
         </section>
 
         <section id="lore" class="mb-16">
-            <h2 class="font-title text-4xl text-center text-primary mb-2">The Lore</h2>
-            <p class="text-center max-w-3xl mx-auto mb-8">CHUCK isn't a token, it's a legend. A force of nature so powerful, it makes charts do pushups. These are the undisputed facts of the CHUCK-verse. Read them. Learn them. Meme them.</p>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="lore-cards">
+            <h2 class="section-title mx-auto">The Five Principles of CHUCK</h2>
+            <p class="text-center max-w-3xl mx-auto mb-8 text-dark-text">Inspired by a legend, $CHUCK embodies the core values that truly roundhouse the market into submission. This isn't just a token; it's a way of life.</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="lore-cards-container">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front"><h3>Freedom</h3></div>
+                        <div class="flip-card-back"><p>Freedom from FUD. Freedom to chart new paths. Freedom to send it.</p></div>
+                    </div>
                 </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front"><h3>Family</h3></div>
+                        <div class="flip-card-back"><p>A tight-knit community, stronger together. We ride, we meme, we win as one.</p></div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front"><h3>Fitness</h3></div>
+                        <div class="flip-card-back"><p>Mentally and financially robust. Our charts do push-ups daily.</p></div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front"><h3>Faith</h3></div>
+                        <div class="flip-card-back"><p>Unwavering belief in the community, the project, and the legend himself.</p></div>
+                    </div>
+                </div>
+                <div class="flip-card col-span-1 md:col-span-2 lg:col-span-1">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front"><h3>Fight</h3></div>
+                        <div class="flip-card-back"><p>Ready to battle FUD, defeat bears, and roundhouse any obstacle.</p></div>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section class="mb-16">
-             <h2 class="font-title text-4xl text-center text-primary mb-8">Meme Gallery</h2>
+        <section id="gallery" class="mb-16">
+            <h2 class="section-title mx-auto">Meme Gallery</h2>
+            <p class="text-center max-w-3xl mx-auto mb-6 text-dark-text">Our community's creativity is unmatched. Submit your best $CHUCK memes for a chance to be featured!</p>
             <div class="text-center mb-8">
-                <button class="bg-primary text-base font-headline px-6 py-3 rounded-md shadow-lg">Submit a Meme (Win 10k CHUCK)</button>
+                <a href="#" class="btn btn-primary">Submit Your Meme!</a>
             </div>
-             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" id="meme-gallery">
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4" id="meme-gallery">
                 </div>
         </section>
 
-        <section id="roadmap" class="mb-16">
-            <h2 class="font-title text-4xl text-center text-primary mb-12">The Roadmap</h2>
-            <div class="relative">
-                <div class="border-l-4 border-accent absolute h-full top-0 left-1/2 -ml-0.5"></div>
+        <section id="faq" class="max-w-4xl mx-auto mb-16">
+            <h2 class="section-title mx-auto">FAQ & Safety</h2>
+            <div id="faq-container" class="space-y-4">
                 </div>
         </section>
-        
-        </main>
+    </main>
 
-    <footer class="bg-base border-t-2 border-accent mt-16 py-8">
-        <div class="container mx-auto px-6 text-center text-gray-400">
+    <footer>
+        <div class="container">
             <div class="flex justify-center space-x-6 mb-4">
-                <a href="#" class="hover:text-primary">Telegram</a>
-                <a href="#" class="hover:text-primary">X (Twitter)</a>
-                <a href="#" class="hover:text-primary">Discord</a>
+                <a href="#" class="text-gold-accent hover:text-light-text font-serif-title">Telegram</a>
+                <a href="#" class="text-gold-accent hover:text-light-text font-serif-title">X (Twitter)</a>
+                <a href="#" class="text-gold-accent hover:text-light-text font-serif-title">Discord</a>
             </div>
-            <p class="text-sm"><strong>Parody Notice:</strong> CHUCK is a satirical memecoin inspired by classic roundhouse lore. Not affiliated with or endorsed by any living person. Not financial advice.</p>
-            <p class="text-xs mt-2">&copy; 2025 CHUCK Token. All rights reserved.</p>
+            <p class="disclaimer"><strong>Disclaimer:</strong> CHUCK is a satirical memecoin for entertainment purposes only. It is not affiliated with, endorsed by, or authorized by any person or entity. Always conduct your own research (DYOR) and understand the risks before participating in cryptocurrency. This is not financial advice.</p>
+            <p class="copyright">&copy; 2025 CHUCK Token. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <div id="toast">Contract copied to clipboard!</div>
+    <div id="toast">Contract address copied!</div>
+    <div id="image-lightbox" class="modal">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="lightbox-img">
+    </div>
     
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // --- Fact Ticker ---
+            // --- Data ---
             const facts = [
-                "Fact: CHUCK once told a candle to go green. It did.",
+                "Fact: CHUCK once told a red candle to go green. It complied.",
                 "Fact: The market apologized after CHUCK blinked.",
                 "Fact: CHUCK doesn’t check prices — prices check themselves.",
                 "When CHUCK mines, Bitcoin asks for his autograph.",
@@ -217,105 +550,120 @@
                 "Slippage apologizes when CHUCK swaps.",
                 "CHUCK once roundhoused a rug pull into a liquidity lock."
             ];
+            const memes = [
+                { img: 'https://i.imgur.com/gB3gSAg.jpeg', caption: 'Roundhouse to the Moon', author: '@memelord' },
+                { img: 'https://i.imgur.com/rLq57dJ.jpeg', caption: 'When your slippage turns into admiration', author: '@degentrader' },
+                { img: 'https://i.imgur.com/W2q2s2o.jpeg', caption: 'CHUCK winked and my portfolio did pushups', author: '@fitcoins' },
+                { img: 'https://i.imgur.com/O6M9k1o.jpeg', caption: 'Gas fees? CHUCK covers emotional fees', author: '@slowmo' },
+                { img: 'https://i.imgur.com/Y1cQ7bN.jpeg', caption: 'When you buy CHUCK and your ex texts you', author: '@stuntman' },
+                { img: 'https://i.imgur.com/sZ4e7gL.jpeg', caption: 'Moon photos now with extra roundhouse filter', author: '@astrofunk' },
+                { img: 'https://i.imgur.com/j4q4X0k.jpeg', caption: 'Proof CHUCK pays rent to the moon', author: '@proofguy' },
+                { img: 'https://i.imgur.com/oW5e2qR.jpeg', caption: 'When the chart says ‘no’ and CHUCK says ‘yes’', author: '@chartwhisper' },
+            ];
+            const faqs = [
+                { q: "Is CHUCK a real Chuck Norris project?", a: "No. CHUCK is a parody memecoin, a tribute to the legend's persona and principles. It is not affiliated with, endorsed by, or authorized by Chuck Norris himself or any associated entity. It is purely for entertainment." },
+                { q: "Is this financial advice? Should I invest?", a: "Absolutely not. This is a highly speculative memecoin. Do your own research (DYOR) and never invest more than you can afford to lose. We provide memes, not financial guidance." },
+                { q: "What are the core principles behind CHUCK?", a: "Our principles are inspired by the legend: Freedom (from FUD), Family (community), Fitness (robust charts), Faith (in the project), and Fight (against bears and obstacles)." },
+                { q: "Is the liquidity locked and contract renounced?", a: "Yes. To ensure community safety and prevent rug pulls, the liquidity for CHUCK will be locked and/or burned upon launch. The contract will be verified and renounced to ensure immutability. Details will be provided on official channels." },
+                { q: "What are the tokenomics?", a: "CHUCK has a total supply of 1 billion tokens. There is a 0% dev allocation, and a max wallet cap (e.g., 1%) may be implemented at launch to prevent large whale manipulation. Exact tax details (if any) will be minimal and disclosed pre-launch." },
+                { q: "Where can I buy CHUCK?", a: "CHUCK will be available on decentralized exchanges (DEXs) on the Solana blockchain, such as Raydium, Jupiter, or Pump.fun, shortly after launch. Instructions are provided on the website." },
+                { q: "How can I join the CHUCK community?", a: "You can join our official Telegram and X (Twitter) channels (links in the footer) to stay updated, participate in discussions, and share memes!" }
+            ];
+
+
+            // --- Fact Ticker ---
             const factTicker = document.getElementById('fact-ticker');
             let factIndex = 0;
             function updateFact() {
-                factTicker.style.opacity = 0;
+                if (!factTicker) return;
+                factTicker.style.opacity = '0';
                 setTimeout(() => {
                     factIndex = (factIndex + 1) % facts.length;
-                    factTicker.textContent = facts[factIndex];
-                    factTicker.style.opacity = 1;
-                }, 500);
+                    factTicker.textContent = `*** CHUCK FACT: ${facts[factIndex]} ***`;
+                    factTicker.style.opacity = '1';
+                }, 500); // Fade out duration
             }
-            updateFact();
-            setInterval(updateFact, 6000);
+            updateFact(); // Initial display
+            setInterval(updateFact, 6000); // Change fact every 6 seconds
 
             // --- Copy Contract Button ---
             const copyButton = document.getElementById('copy-button');
             const contractAddress = document.getElementById('contract-address');
             const toast = document.getElementById('toast');
-            copyButton.addEventListener('click', () => {
-                navigator.clipboard.writeText(contractAddress.textContent).then(() => {
-                    toast.className = "show";
-                    setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 3000);
+            if (copyButton && contractAddress && toast) {
+                copyButton.addEventListener('click', () => {
+                    navigator.clipboard.writeText(contractAddress.textContent).then(() => {
+                        toast.className = "show";
+                        setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 3000);
+                    }).catch(err => {
+                        console.error('Failed to copy text: ', err);
+                    });
                 });
-            });
-            
-            // --- Lore Cards ---
-            const loreFacts = [
-                { title: "Market Whisperer", text: "When CHUCK whispers “buy”, whales listen." },
-                { title: "The Bear Slayer", text: "CHUCK once shorted a bear and it became a bull." },
-                { title: "Oracle's Oracle", text: "When CHUCK tweets, the oracle delays to listen." },
-                { title: "Whitepaper Salute", text: "CHUCK doesn’t read whitepapers — whitepapers salute him." },
-                { title: "Airdrop with a Kick", text: "CHUCK’s airdrops come with a roundhouse." },
-                { title: "Self-Auditing Contracts", text: "Smart contracts audit themselves in CHUCK’s presence." }
-            ];
-            const loreContainer = document.getElementById('lore-cards');
-            loreFacts.forEach(fact => {
-                const card = `
-                    <div class="flip-card bg-gray-900 rounded-lg h-48">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front border border-highlight">
-                                <h3 class="font-headline text-2xl text-highlight">${fact.title}</h3>
-                            </div>
-                            <div class="flip-card-back bg-accent border border-highlight">
-                                <p class="text-cream">${fact.text}</p>
-                            </div>
-                        </div>
-                    </div>`;
-                loreContainer.innerHTML += card;
-            });
-            
-            // --- Meme Gallery ---
+            }
+
+            // --- Meme Gallery & Lightbox ---
             const memeGallery = document.getElementById('meme-gallery');
-            const memes = [
-                { img: 'https://storage.googleapis.com/gemini-generative-ai-api-file-cache/214a1e95-7798-422f-ae52-c0e816a3c5a8/meme_1.jpg', caption: 'Roundhouse to the Moon', author: '@memelord' },
-                { img: 'https://storage.googleapis.com/gemini-generative-ai-api-file-cache/214a1e95-7798-422f-ae52-c0e816a3c5a8/meme_2.jpg', caption: 'When your slippage turns into admiration', author: '@degentrader' },
-                { img: 'https://storage.googleapis.com/gemini-generative-ai-api-file-cache/214a1e95-7798-422f-ae52-c0e816a3c5a8/meme_3.jpg', caption: 'CHUCK winked and my portfolio did pushups', author: '@fitcoins' },
-                { img: 'https://storage.googleapis.com/gemini-generative-ai-api-file-cache/214a1e95-7798-422f-ae52-c0e816a3c5a8/meme_4.jpg', caption: 'Gas fees? CHUCK covers emotional fees', author: '@slowmo' },
-                { img: 'https://storage.googleapis.com/gemini-generative-ai-api-file-cache/214a1e95-7798-422f-ae52-c0e816a3c5a8/meme_5.jpg', caption: 'When you buy CHUCK and your ex texts you', author: '@stuntman' },
-                { img: 'https://storage.googleapis.com/gemini-generative-ai-api-file-cache/214a1e95-7798-422f-ae52-c0e816a3c5a8/meme_6.jpg', caption: 'Moon photos now with extra roundhouse filter', author: '@astrofunk' },
-                { img: 'https://storage.googleapis.com/gemini-generative-ai-api-file-cache/214a1e95-7798-422f-ae52-c0e816a3c5a8/meme_7.jpg', caption: 'Proof CHUCK pays rent to the moon', author: '@proofguy' },
-                { img: 'https://storage.googleapis.com/gemini-generative-ai-api-file-cache/214a1e95-7798-422f-ae52-c0e816a3c5a8/meme_8.jpg', caption: 'When the chart says ‘no’ and CHUCK says ‘yes’', author: '@chartwhisper' },
-            ];
-             memes.forEach(meme => {
-                const memeEl = document.createElement('div');
-                memeEl.innerHTML = `
-                    <img src="${meme.img}" alt="${meme.caption}" class="w-full h-auto rounded-lg object-cover aspect-square" loading="lazy">
-                    <p class="text-sm mt-1">“${meme.caption}”</p>
-                    <p class="text-xs text-highlight">${meme.author}</p>`;
-                memeGallery.appendChild(memeEl);
-            });
-            
-            // --- Roadmap ---
-            const roadmapContainer = document.querySelector('#roadmap .relative');
-            const milestones = [
-                { title: 'Meme & Lore', desc: 'Establish the legend. Build the myth.', side: 'left' },
-                { title: 'Launch', desc: 'Deploy on pump.fun. The legend begins.', side: 'right' },
-                { title: 'Liquidity Lock', desc: 'Liquidity is locked and the keys are thrown away.', side: 'left' },
-                { title: 'Merch Drop', desc: 'Legendary gear for the community.', side: 'right' },
-                { title: 'Community Governance', desc: 'Holders vote on the next legendary feat.', side: 'left' },
-            ];
+            const lightbox = document.getElementById('image-lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const closeBtn = document.querySelector('.modal-close');
 
-            milestones.forEach((item, index) => {
-                const sideClass = item.side === 'left' ? 'md:pr-8' : 'md:pl-8';
-                const textAlign = item.side === 'left' ? 'md:text-right' : 'md:text-left';
-                const containerClass = item.side === 'left' ? 'md:flex-row-reverse' : '';
-
-                const milestoneEl = `
-                    <div class="mb-8 flex justify-between items-center w-full ${containerClass}">
-                        <div class="order-1 md:w-5/12"></div>
-                        <div class="z-20 flex items-center order-1 bg-primary shadow-xl w-8 h-8 rounded-full">
-                            <h1 class="mx-auto font-semibold text-lg text-base">${index + 1}</h1>
-                        </div>
-                        <div class="order-1 bg-gray-900 rounded-lg shadow-xl w-full md:w-5/12 p-4 ${sideClass} ${textAlign}">
-                            <h3 class="font-headline mb-3 text-highlight text-xl">${item.title}</h3>
-                            <p class="text-sm leading-snug tracking-wide text-cream text-opacity-80">${item.desc}</p>
-                        </div>
-                    </div>`;
-                roadmapContainer.innerHTML += milestoneEl;
+            if (memeGallery) {
+                memes.forEach(meme => {
+                    const memeEl = document.createElement('div');
+                    memeEl.className = 'meme-tile';
+                    memeEl.innerHTML = `
+                        <img src="${meme.img}" alt="${meme.caption}" loading="lazy">
+                        <p class="caption">“${meme.caption}”</p>
+                        <p class="author">${meme.author}</p>`;
+                    memeEl.addEventListener('click', () => {
+                        lightbox.style.display = "block";
+                        lightboxImg.src = meme.img;
+                    });
+                    memeGallery.appendChild(memeEl);
+                });
+            }
+            if (closeBtn) {
+                closeBtn.addEventListener('click', () => lightbox.style.display = "none");
+            }
+            lightbox.addEventListener('click', (e) => { // Close when clicking outside image
+                if (e.target !== lightboxImg) {
+                    lightbox.style.display = "none";
+                }
             });
 
+
+            // --- FAQ Accordion ---
+            const faqContainer = document.getElementById('faq-container');
+            if (faqContainer) {
+                faqs.forEach((faq, index) => {
+                    const faqItem = document.createElement('div');
+                    faqItem.className = 'faq-item';
+                    faqItem.innerHTML = `
+                        <button class="faq-question">
+                            <span>${faq.q}</span>
+                            <span class="faq-arrow">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>${faq.a}</p>
+                        </div>`;
+                    
+                    const questionButton = faqItem.querySelector('.faq-question');
+                    const answerDiv = faqItem.querySelector('.faq-answer');
+                    const arrowSpan = faqItem.querySelector('.faq-arrow');
+
+                    questionButton.addEventListener('click', () => {
+                        const isActive = faqItem.classList.toggle('active');
+                        if (isActive) {
+                            answerDiv.style.display = 'block';
+                            arrowSpan.textContent = 'x'; // Change to 'x' or '-' when open
+                        } else {
+                            answerDiv.style.display = 'none';
+                            arrowSpan.textContent = '+';
+                        }
+                    });
+                    faqContainer.appendChild(faqItem);
+                });
+            }
         });
     </script>
 </body>
