@@ -3,618 +3,244 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CHUCK — The Unwavering Token</title>
+    <title>CHUCK — The Toughest Token in the West</title>
     
-    <meta name="description" content="CHUCK is a parody memecoin built on principles: Freedom, Family, Fitness, Faith & Fight. Liquidity locked, community-first.">
-    <meta property="og:title" content="CHUCK — The Unwavering Token">
-    <meta property="og:description" content="CHUCK is a parody memecoin built on principles: Freedom, Family, Fitness, Faith & Fight. Liquidity locked, community-first.">
-    <meta property="og:image" content="https://i.imgur.com/hDaT1fN.jpeg"> <meta property="og:url" content="YOUR_WEBSITE_URL">
+    <meta name="description" content="CHUCK is a parody memecoin for the digital frontier. A tribute to the legends of the West. Not financial advice, partner.">
+    <meta property="og:title" content="CHUCK — The Toughest Token in the West">
+    <meta property="og:description" content="CHUCK is a parody memecoin for the digital frontier. A tribute to the legends of the West.">
+    <meta property="og:image" content="https://i.imgur.com/hDaT1fN.jpeg"> 
+    <meta property="og:url" content="YOUR_WEBSITE_URL">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="CHUCK — The Unwavering Token">
-    <meta name="twitter:description" content="CHUCK is a parody memecoin built on principles: Freedom, Family, Fitness, Faith & Fight. Liquidity locked, community-first.">
-    <meta name="twitter:image" content="https://i.imgur.com/hDaT1fN.jpeg"> <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rye&family=Crimson+Text:wght@400;700&display=swap" rel="stylesheet">
     
     <script src="https://cdn.tailwindcss.com"></script>
     
     <style>
-        /* --- Color Palette from Image --- */
         :root {
-            --primary-red: #B22222; /* Flag Red - Firebrick */
-            --primary-blue: #0A1128; /* Dark Blue from "Approved" seal */
-            --off-white: #F5F5DC; /* Creamy background of the card */
-            --gold-accent: #DAA520; /* Gold/Bronze for highlights */
-            --dark-text: #212121; /* Dark grey for main text */
-            --light-text: #FFFFFF; /* White text */
+            --bg-dusty: #EADDC6; /* Dusty Beige */
+            --wood-dark: #5C3D2E; /* Dark Wood */
+            --leather-red: #9A3B3B; /* Worn Leather Red */
+            --accent-turq: #40E0D0; /* Turquoise */
+            --text-dark: #222222; /* Near-black text */
         }
-
-        /* --- Typography --- */
-        .font-serif-title { font-family: 'Merriweather', serif; } /* For strong titles */
-        .font-sans-body { font-family: 'Open Sans', sans-serif; } /* For readable body text */
-        .font-script { font-family: 'Great Vibes', cursive; } /* For Chuck Norris signature style */
+        .font-western { font-family: 'Rye', serif; }
+        .font-body-serif { font-family: 'Crimson Text', serif; }
 
         body {
-            background-color: var(--off-white);
-            color: var(--dark-text);
-            font-family: var(--font-sans-body);
-            line-height: 1.6;
+            background-color: var(--bg-dusty);
+            color: var(--text-dark);
+            font-family: var(--font-body-serif);
+            background-image: url('https://www.transparenttextures.com/patterns/dust.png');
         }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-
-        /* --- Custom Components --- */
-        .header-section {
-            background-color: var(--primary-blue);
-            color: var(--light-text);
-            padding: 2rem 0;
-            border-bottom: 4px solid var(--primary-red); /* Strong horizontal divider */
-        }
-
-        .hero-section {
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect x="0" y="0" width="100" height="100" fill="%23B22222"/><rect x="0" y="20" width="100" height="10" fill="%23FFFFFF"/><rect x="0" y="40" width="100" height="10" fill="%23FFFFFF"/><rect x="0" y="60" width="100" height="10" fill="%23FFFFFF"/><rect x="0" y="80" width="100" height="10" fill="%23FFFFFF"/><rect x="0" y="0" width="40" height="50" fill="%230A1128"/><circle cx="20" cy="25" r="15" fill="%23FFFFFF"/><path d="M20 15 L25 35 L15 35 Z" fill="%230A1128"/></svg>');
-            background-size: 150px 150px; /* Small, tiled flag pattern */
-            background-blend-mode: multiply; /* Blend with background-color */
-            background-color: rgba(178, 34, 34, 0.1); /* Very subtle red tint */
-            padding: 6rem 0 4rem 0;
-            text-align: center;
-            border-bottom: 4px solid var(--primary-red);
+        
+        .wanted-poster {
+            background-color: #FFFDF5; /* Aged paper */
+            border: 10px solid var(--wood-dark);
+            padding: 2rem;
+            box-shadow: 0 0 0 5px var(--wood-dark), 0 10px 25px rgba(0,0,0,0.5);
             position: relative;
-            overflow: hidden;
         }
-
-        .hero-badge {
-            background-color: var(--off-white);
-            border: 4px solid var(--primary-blue);
-            border-radius: 50%;
-            padding: 1rem;
-            display: inline-flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
-            margin-bottom: 2rem;
-            max-width: 200px;
-            max-height: 200px;
-        }
-
-        .hero-badge img {
-            max-width: 100px;
-            height: auto;
-            border-radius: 50%;
-            margin-bottom: 0.5rem;
-        }
-
-        .hero-title {
-            font-family: var(--font-serif-title);
-            font-size: clamp(3rem, 8vw, 5.5rem);
-            color: var(--primary-blue);
-            text-shadow: 2px 2px 0px var(--primary-red);
-            line-height: 1;
-            margin-bottom: 1rem;
-        }
-
-        .hero-subtitle {
-            font-family: var(--font-serif-title);
-            font-size: clamp(1.5rem, 4vw, 2.5rem);
-            color: var(--dark-text);
-            margin-bottom: 2rem;
+        .wanted-poster::before {
+            content: '';
+            position: absolute;
+            inset: -20px;
+            border: 2px dashed rgba(0,0,0,0.3);
+            pointer-events: none;
         }
 
         .btn {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            font-family: var(--font-sans-body);
-            font-weight: 700;
-            text-decoration: none;
-            border-radius: 4px;
-            transition: all 0.3s ease-in-out;
-            border: 2px solid transparent;
-        }
-
-        .btn-primary {
-            background-color: var(--primary-red);
-            color: var(--light-text);
-            border-color: var(--primary-red);
-        }
-        .btn-primary:hover {
-            background-color: #A01C1C;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
-
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--primary-blue);
-            border-color: var(--primary-blue);
-        }
-        .btn-secondary:hover {
-            background-color: var(--primary-blue);
-            color: var(--light-text);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
-
-        .section-title {
-            font-family: var(--font-serif-title);
-            font-size: clamp(2.2rem, 5vw, 3.5rem);
-            color: var(--primary-blue);
-            text-align: center;
-            margin-bottom: 3rem;
-            padding-top: 1rem;
-            border-bottom: 3px solid var(--primary-red);
-            display: inline-block; /* For the border to hug text */
-            padding-bottom: 0.5rem;
-            text-shadow: 1px 1px 0px rgba(0,0,0,0.1);
-        }
-
-        .info-card {
-            background-color: var(--light-text);
-            border: 2px solid var(--primary-blue);
-            padding: 1.5rem;
-            border-radius: 6px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            transition: transform 0.2s;
-        }
-        .info-card:hover { transform: translateY(-5px); }
-        .info-card h3 {
-            font-family: var(--font-serif-title);
-            color: var(--primary-red);
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-        .info-card p {
-            color: var(--dark-text);
-        }
-
-        .contract-box {
-            background-color: var(--primary-blue);
-            color: var(--light-text);
-            padding: 1.5rem;
-            border-radius: 6px;
-            text-align: center;
-            margin-top: 3rem;
-        }
-        .contract-box code {
-            background-color: rgba(255,255,255,0.1);
-            padding: 0.75rem 1rem;
-            border-radius: 4px;
-            display: block;
-            margin-bottom: 1rem;
-            font-family: monospace;
-            word-break: break-all;
-        }
-        .copy-button {
-            background-color: var(--primary-red);
-            color: var(--light-text);
+            font-family: var(--font-western);
             padding: 0.75rem 2rem;
-            border-radius: 4px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: background-color 0.2s;
+            color: var(--bg-dusty);
+            background-color: var(--leather-red);
+            border: 2px solid var(--wood-dark);
+            box-shadow: inset 0 0 5px rgba(0,0,0,0.4);
+            text-decoration: none;
+            transition: all 0.2s;
         }
-        .copy-button:hover { background-color: #A01C1C; }
-
-        /* Fact Ticker */
-        #fact-ticker-container {
-            background-color: rgba(0,0,0,0.7); /* Dark semi-transparent band */
-            color: var(--gold-accent); /* Gold text for emphasis */
-            padding: 0.5rem 0;
-            text-align: center;
-            font-family: 'Open Sans', sans-serif; /* Clean font for facts */
-            font-size: 0.9rem;
-            position: absolute;
-            bottom: 0;
-            width: 100%;
+        .btn:hover {
+            background-color: #7c2e2e;
+            transform: translateY(-2px);
         }
 
         /* Toast Notification */
         #toast {
-            visibility: hidden; min-width: 250px; background-color: var(--primary-blue); color: #fff; text-align: center;
-            border-radius: 8px; padding: 16px; position: fixed; z-index: 100; left: 50%;
+            visibility: hidden; font-family: var(--font-western); background-color: var(--wood-dark); color: var(--bg-dusty);
+            padding: 1rem; position: fixed; z-index: 100; left: 50%; border: 2px solid var(--leather-red);
             transform: translateX(-50%); bottom: 30px; opacity: 0;
-            transition: visibility 0s 0.5s, opacity 0.5s linear;
+            transition: all 0.5s;
         }
-        #toast.show { visibility: visible; opacity: 1; transition: opacity 0.5s linear; }
-
-        /* Lore Cards - Flip Animation */
-        .flip-card { perspective: 1000px; height: 180px; } /* Fixed height for consistency */
-        .flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s; transform-style: preserve-3d; }
-        .flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
-        .flip-card-front, .flip-card-back {
-            position: absolute; width: 100%; height: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden;
-            display: flex; align-items: center; justify-content: center; flex-direction: column; padding: 1.5rem;
-            border-radius: 6px; /* Match info cards */
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        .flip-card-front {
-            background-color: var(--light-text);
-            border: 2px solid var(--primary-blue);
-            color: var(--dark-text);
-        }
-        .flip-card-front h3 {
-            font-family: var(--font-serif-title);
-            color: var(--primary-red);
-            font-size: 1.6rem;
-        }
-        .flip-card-back {
-            background-color: var(--primary-blue);
-            color: var(--light-text);
-            border: 2px solid var(--primary-red);
-            transform: rotateY(180deg);
-        }
-        .flip-card-back p { font-family: var(--font-sans-body); font-size: 1rem; }
-
-        /* Meme Gallery */
-        .meme-tile {
-            background-color: var(--light-text);
-            padding: 0.75rem;
-            border-radius: 6px;
-            border: 2px solid var(--primary-blue);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            cursor: pointer;
-            transition: transform 0.2s, border-color 0.2s;
-        }
-        .meme-tile:hover {
-            transform: translateY(-3px);
-            border-color: var(--gold-accent);
-        }
-        .meme-tile img {
-            width: 100%;
-            height: 180px; /* Consistent height for memes */
-            object-fit: cover;
-            border-radius: 4px;
-            margin-bottom: 0.5rem;
-        }
-        .meme-tile .caption {
-            font-size: 0.9rem;
-            color: var(--dark-text);
-            font-weight: 700;
-        }
-        .meme-tile .author {
-            font-size: 0.8rem;
-            color: var(--primary-red);
-            font-family: var(--font-sans-body);
-        }
+        #toast.show { visibility: visible; opacity: 1; }
 
         /* Lightbox */
-        .modal {
-            display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%;
-            overflow: auto; background-color: rgba(0,0,0,0.9);
-            animation: fadeIn 0.3s;
-        }
-        .modal-content {
-            margin: auto; display: block; max-width: 90vw; max-height: 90vh; object-fit: contain;
-            animation: zoomIn 0.3s;
-        }
-        .modal-close {
-            position: absolute; top: 15px; right: 35px; color: #f1f1f1; font-size: 40px; font-weight: bold;
-            transition: 0.3s; cursor: pointer;
-        }
-        .modal-close:hover, .modal-close:focus { color: #bbb; }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        @keyframes zoomIn { from { transform: scale(0.8); } to { transform: scale(1); } }
-
-        /* FAQ Accordion */
-        .faq-item {
-            background-color: var(--light-text);
-            border: 2px solid var(--primary-blue);
-            border-radius: 6px;
-            margin-bottom: 1rem;
-            overflow: hidden;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .faq-question {
-            width: 100%; padding: 1rem 1.5rem; text-align: left;
-            font-family: var(--font-serif-title); font-size: 1.2rem; color: var(--primary-blue);
-            background-color: var(--off-white); cursor: pointer;
-            display: flex; justify-content: space-between; align-items: center;
-            border-bottom: 1px solid rgba(0,0,0,0.1);
-        }
-        .faq-question:hover { background-color: #EAEAEA; }
-        .faq-answer {
-            padding: 1rem 1.5rem;
-            color: var(--dark-text);
-            border-top: 1px solid #eee;
-            display: none; /* Hidden by default */
-        }
-        .faq-arrow {
-            font-size: 1.5rem;
-            transition: transform 0.3s ease;
-        }
-        .faq-item.active .faq-arrow { transform: rotate(45deg); }
-        .faq-item.active .faq-question { background-color: #EAEAEA; border-bottom: none; }
-
-
-        /* Footer */
-        footer {
-            background-color: var(--primary-blue);
-            color: var(--light-text);
-            padding: 3rem 0;
-            text-align: center;
-            border-top: 4px solid var(--primary-red);
-        }
-        footer a {
-            color: var(--gold-accent);
-            text-decoration: none;
-            font-weight: 700;
-            transition: color 0.2s;
-        }
-        footer a:hover { color: var(--light-text); }
-        footer .disclaimer {
-            font-size: 0.9rem;
-            color: rgba(255,255,255,0.7);
-            max-width: 800px;
-            margin: 1.5rem auto 0 auto;
-        }
-        footer .copyright {
-            font-size: 0.8rem;
-            color: rgba(255,255,255,0.5);
-            margin-top: 1rem;
-        }
-
-        /* Responsiveness */
-        @media (max-width: 768px) {
-            .hero-title { font-size: 3rem; }
-            .hero-subtitle { font-size: 1.8rem; }
-            .btn { padding: 0.8rem 2rem; font-size: 1rem; }
-            .section-title { font-size: 2rem; }
-            .header-section { padding: 1rem 0; }
-            .header-section .flex { flex-direction: column; }
-            .header-section .text-2xl { margin-bottom: 0.5rem; }
-            .header-section nav a { margin: 0 0.5rem; font-size: 0.9rem; }
-            .contract-box code { font-size: 0.8rem; }
-        }
+        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); }
+        .modal-content { margin: auto; display: block; max-width: 90vw; max-height: 90vh; }
+        .modal-close { position: absolute; top: 15px; right: 35px; color: #f1f1f1; font-size: 40px; font-weight: bold; cursor: pointer; }
     </style>
 </head>
-<body class="font-sans-body">
+<body class="font-body-serif">
 
-    <div class="header-section">
-        <div class="container flex justify-between items-center flex-wrap">
-            <div class="text-2xl font-script text-light-text mb-2 md:mb-0">Chuck Norris'</div>
-            <nav class="flex space-x-4 md:space-x-8">
-                <a href="#lore" class="text-gold-accent hover:text-light-text font-serif-title">Lore</a>
-                <a href="#gallery" class="text-gold-accent hover:text-light-text font-serif-title">Memes</a>
-                <a href="#faq" class="text-gold-accent hover:text-light-text font-serif-title">FAQ</a>
-                <a href="#" class="text-gold-accent hover:text-light-text font-serif-title">Community</a>
+    <header class="bg-wood-dark border-b-4 border-leather-red py-4">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="font-western text-3xl text-bg-dusty">$CHUCK</div>
+            <nav class="hidden md:flex space-x-6 font-western">
+                <a href="#lore" class="text-bg-dusty hover:text-accent-turq">The Legend</a>
+                <a href="#gallery" class="text-bg-dusty hover:text-accent-turq">Bounty Board</a>
+                <a href="#faq" class="text-bg-dusty hover:text-accent-turq">Saloon Talk</a>
             </nav>
-        </div>
-    </div>
-
-    <header class="hero-section">
-        <div class="container relative z-10">
-            <div class="hero-badge mx-auto">
-                <img src="https://i.imgur.com/gK20W7H.png" alt="Chuck Norris Approved Logo" class="w-24 h-24">
-                <span class="font-serif-title text-primary-blue text-sm">CHUCK NORRIS</span>
-                <span class="font-serif-title text-primary-blue text-xs leading-none">APPROVED</span>
-            </div>
-            <h1 class="hero-title">CHUCK</h1>
-            <h2 class="hero-subtitle">The Unwavering Token</h2>
-            <p class="text-lg md:text-xl text-dark-text max-w-2xl mx-auto mb-8">Inspired by the legendary Five Principles: Freedom, Family, Fitness, Faith & Fight. A memecoin with an iron will.</p>
-            
-            <div class="mt-8 flex justify-center items-center space-x-4 flex-wrap gap-4">
-                <a href="#" class="btn btn-primary">Buy $CHUCK Now</a>
-                <a href="#" class="btn btn-secondary">Join the Dojo</a>
-            </div>
-        </div>
-        <div id="fact-ticker-container">
-            <p id="fact-ticker" class="transition-opacity duration-500"></p>
         </div>
     </header>
 
-    <main class="container py-12">
-        <section class="mb-16">
-            <h2 class="section-title mx-auto">Token Overview</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-center">
-                <div class="info-card">
-                    <h3>Total Supply</h3>
-                    <p class="text-3xl font-bold font-serif-title">1 Billion</p>
-                    <p class="text-sm text-gray-600">No mint function, fixed supply.</p>
+    <main class="container mx-auto px-6 py-12 md:py-20">
+
+        <section class="text-center">
+            <img src="https://i.ibb.co/L5r4J5T/chuck-pixel-kick.png" alt="Pixelated Mascot" class="mx-auto w-32 h-32 mb-6 p-2 bg-bg-dusty border-4 border-wood-dark" style="image-rendering: pixelated;">
+            <h1 class="font-western text-5xl md:text-7xl lg:text-8xl text-wood-dark" style="text-shadow: 2px 2px 0px #fff, 4px 4px 0px rgba(0,0,0,0.2);">CHUCK</h1>
+            <h2 class="font-western text-2xl md:text-4xl text-leather-red mt-2">The Toughest Token in the West</h2>
+            <p class="mt-4 text-lg max-w-2xl mx-auto text-text-dark">This town ain't big enough for paper hands. A legendary tribute for the new digital frontier.</p>
+            <div class="mt-8 flex justify-center items-center space-x-4">
+                <a href="#" class="btn">Get your $CHUCK</a>
+                <a href="#" class="btn" style="background-color: var(--wood-dark);">Join the Posse</a>
+            </div>
+            <p class="mt-6 text-xs text-gray-600">Parody coin. Not a real cowboy. Not financial advice.</p>
+        </section>
+
+        <section class="mt-20">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 text-center">
+                <div class="p-4 bg-bg-dusty border-2 border-dashed border-wood-dark">
+                    <h3 class="font-western text-lg text-leather-red">Supply</h3><p class="text-2xl font-bold">1B</p>
                 </div>
-                <div class="info-card">
-                    <h3>Liquidity</h3>
-                    <p class="text-3xl font-bold text-green-600 font-serif-title">Locked & Burned ✅</p>
-                    <p class="text-sm text-gray-600">Ensuring a fair and secure launch.</p>
+                <div class="p-4 bg-bg-dusty border-2 border-dashed border-wood-dark">
+                    <h3 class="font-western text-lg text-leather-red">Team Tokens</h3><p class="text-2xl font-bold">0%</p>
                 </div>
-                <div class="info-card">
-                    <h3>Dev Wallet</h3>
-                    <p class="text-3xl font-bold font-serif-title">0% Allocation</p>
-                    <p class="text-sm text-gray-600">Community driven from day one.</p>
+                <div class="p-4 bg-bg-dusty border-2 border-dashed border-wood-dark">
+                    <h3 class="font-western text-lg text-leather-red">Liquidity</h3><p class="font-bold text-green-800">Burned 🔥</p>
                 </div>
-                <div class="info-card">
-                    <h3>Max Wallet</h3>
-                    <p class="text-3xl font-bold font-serif-title">1% of Supply</p>
-                    <p class="text-sm text-gray-600">Anti-whale measure to promote decentralization.</p>
+                <div class="p-4 bg-bg-dusty border-2 border-dashed border-wood-dark">
+                    <h3 class="font-western text-lg text-leather-red">Max Wallet</h3><p class="text-2xl font-bold">1%</p>
                 </div>
-                <div class="info-card col-span-1 md:col-span-2 lg:col-span-1">
-                    <h3>Contract Status</h3>
-                    <p class="text-3xl font-bold text-green-600 font-serif-title">Verified & Renounced ✅</p>
-                    <p class="text-sm text-gray-600">Trust and transparency built in.</p>
+                <div class="p-4 bg-bg-dusty border-2 border-dashed border-wood-dark col-span-2 lg:col-span-1">
+                    <h3 class="font-western text-lg text-leather-red">Contract</h3><p class="font-bold text-green-800">Renounced ✅</p>
                 </div>
             </div>
         </section>
 
-        <section class="mb-16">
-            <h2 class="section-title mx-auto">How to Get $CHUCK</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-                <div class="info-card">
-                    <h3>1. Setup Wallet</h3>
-                    <p>Install Phantom or Solflare (Solana wallets) on your browser or mobile.</p>
+        <section class="mt-20">
+             <h2 class="font-western text-4xl text-center text-wood-dark mb-10">Sheriff's Guide to Buying</h2>
+             <div class="wanted-poster">
+                <div class="grid md:grid-cols-4 gap-8 text-center">
+                    <div><div class="text-5xl mb-2">🤠</div><h3 class="font-western text-xl text-leather-red">1. Get a Wallet</h3><p>Grab a Solana wallet like Phantom.</p></div>
+                    <div><div class="text-5xl mb-2">💰</div><h3 class="font-western text-xl text-leather-red">2. Load up on SOL</h3><p>Buy some SOL from an exchange.</p></div>
+                    <div><div class="text-5xl mb-2"> saloon</div><h3 class="font-western text-xl text-leather-red">3. Visit the DEX</h3><p>Head to Raydium or Pump.fun.</p></div>
+                    <div><div class="text-5xl mb-2">🤝</div><h3 class="font-western text-xl text-leather-red">4. Make the Trade</h3><p>Paste the contract & swap for $CHUCK.</p></div>
                 </div>
-                <div class="info-card">
-                    <h3>2. Acquire SOL</h3>
-                    <p>Purchase Solana ($SOL) from a major exchange (e.g., Binance, Coinbase) and send it to your wallet.</p>
+                <div class="mt-8 text-center bg-wood-dark p-4">
+                    <p class="text-bg-dusty font-western">THE CONTRACT</p>
+                    <div class="flex justify-center items-center mt-2">
+                        <code id="contract-address" class="text-sm md:text-base bg-black bg-opacity-20 p-2 text-white break-all">YourSOLe...naContractAddressHere...CHUCK</code>
+                        <button id="copy-button" class="bg-leather-red text-white px-4 py-2 font-western">Copy</button>
+                    </div>
                 </div>
-                <div class="info-card">
-                    <h3>3. Visit DEX</h3>
-                    <p>Go to Raydium, Jupiter, or Pump.fun via your wallet's browser.</p>
-                </div>
-                <div class="info-card">
-                    <h3>4. Swap for CHUCK</h3>
-                    <p>Paste our contract address, set slippage (1-3%), and swap your SOL for CHUCK!</p>
-                </div>
-            </div>
-            <div class="contract-box">
-                <h3 class="font-serif-title text-gold-accent text-2xl mb-2">CHUCK Contract Address (SOLANA)</h3>
-                <code id="contract-address">YourSOLe...naContractAddressHere...CHUCK</code>
-                <button id="copy-button" class="copy-button">Copy Contract Address</button>
+             </div>
+        </section>
+
+        <section id="lore" class="mt-20">
+            <h2 class="font-western text-4xl text-center text-wood-dark mb-10">The Legend of CHUCK</h2>
+            <p class="text-center max-w-3xl mx-auto mb-10">They say he doesn't trade dips, the dips trade him. They say his wallet address is just a whisper on the wind. These are the tales from the frontier of the CHUCK token.</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="lore-cards-container">
             </div>
         </section>
 
-        <section id="lore" class="mb-16">
-            <h2 class="section-title mx-auto">The Five Principles of CHUCK</h2>
-            <p class="text-center max-w-3xl mx-auto mb-8 text-dark-text">Inspired by a legend, $CHUCK embodies the core values that truly roundhouse the market into submission. This isn't just a token; it's a way of life.</p>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="lore-cards-container">
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front"><h3>Freedom</h3></div>
-                        <div class="flip-card-back"><p>Freedom from FUD. Freedom to chart new paths. Freedom to send it.</p></div>
-                    </div>
-                </div>
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front"><h3>Family</h3></div>
-                        <div class="flip-card-back"><p>A tight-knit community, stronger together. We ride, we meme, we win as one.</p></div>
-                    </div>
-                </div>
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front"><h3>Fitness</h3></div>
-                        <div class="flip-card-back"><p>Mentally and financially robust. Our charts do push-ups daily.</p></div>
-                    </div>
-                </div>
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front"><h3>Faith</h3></div>
-                        <div class="flip-card-back"><p>Unwavering belief in the community, the project, and the legend himself.</p></div>
-                    </div>
-                </div>
-                <div class="flip-card col-span-1 md:col-span-2 lg:col-span-1">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front"><h3>Fight</h3></div>
-                        <div class="flip-card-back"><p>Ready to battle FUD, defeat bears, and roundhouse any obstacle.</p></div>
-                    </div>
-                </div>
+        <section id="gallery" class="mt-20">
+            <h2 class="font-western text-4xl text-center text-wood-dark mb-4">Bounty Board</h2>
+            <p class="text-center max-w-3xl mx-auto mb-8">Best meme of the week gets a bounty of 10k $CHUCK. Post 'em, tag us, and may the best gunslinger win.</p>
+             <div class="text-center mb-8">
+                <a href="#" class="btn">Post a Bounty</a>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="meme-gallery">
             </div>
         </section>
 
-        <section id="gallery" class="mb-16">
-            <h2 class="section-title mx-auto">Meme Gallery</h2>
-            <p class="text-center max-w-3xl mx-auto mb-6 text-dark-text">Our community's creativity is unmatched. Submit your best $CHUCK memes for a chance to be featured!</p>
-            <div class="text-center mb-8">
-                <a href="#" class="btn btn-primary">Submit Your Meme!</a>
-            </div>
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4" id="meme-gallery">
-                </div>
-        </section>
-
-        <section id="faq" class="max-w-4xl mx-auto mb-16">
-            <h2 class="section-title mx-auto">FAQ & Safety</h2>
+        <section id="faq" class="mt-20 max-w-4xl mx-auto">
+            <h2 class="font-western text-4xl text-center text-wood-dark mb-10">Saloon Talk (FAQ)</h2>
             <div id="faq-container" class="space-y-4">
-                </div>
+            </div>
         </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <div class="flex justify-center space-x-6 mb-4">
-                <a href="#" class="text-gold-accent hover:text-light-text font-serif-title">Telegram</a>
-                <a href="#" class="text-gold-accent hover:text-light-text font-serif-title">X (Twitter)</a>
-                <a href="#" class="text-gold-accent hover:text-light-text font-serif-title">Discord</a>
+    <footer class="bg-wood-dark text-bg-dusty mt-20 py-8 border-t-4 border-leather-red">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex justify-center space-x-6 mb-4 font-western">
+                <a href="#" class="hover:text-accent-turq">Telegram</a>
+                <a href="#" class="hover:text-accent-turq">X (Twitter)</a>
             </div>
-            <p class="disclaimer"><strong>Disclaimer:</strong> CHUCK is a satirical memecoin for entertainment purposes only. It is not affiliated with, endorsed by, or authorized by any person or entity. Always conduct your own research (DYOR) and understand the risks before participating in cryptocurrency. This is not financial advice.</p>
-            <p class="copyright">&copy; 2025 CHUCK Token. All Rights Reserved.</p>
+            <p class="text-sm"><strong>Disclaimer:</strong> This is a parody coin for entertainment. Not affiliated with any real cowboys, dead or alive. Do your own research, don't bet the whole farm. Not financial advice.</p>
+            <p class="text-xs mt-2 opacity-70">&copy; 2025 CHUCK Token. All rights reserved.</p>
         </div>
     </footer>
 
-    <div id="toast">Contract address copied!</div>
-    <div id="image-lightbox" class="modal">
-        <span class="modal-close">&times;</span>
-        <img class="modal-content" id="lightbox-img">
-    </div>
+    <div id="toast">Contract Copied, Partner!</div>
+    <div id="image-lightbox" class="modal"><span class="modal-close">&times;</span><img class="modal-content" id="lightbox-img"></div>
     
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // --- Data ---
-            const facts = [
-                "Fact: CHUCK once told a red candle to go green. It complied.",
-                "Fact: The market apologized after CHUCK blinked.",
-                "Fact: CHUCK doesn’t check prices — prices check themselves.",
-                "When CHUCK mines, Bitcoin asks for his autograph.",
-                "CHUCK doesn’t HODL — he commands markets to stay.",
-                "Slippage apologizes when CHUCK swaps.",
-                "CHUCK once roundhoused a rug pull into a liquidity lock."
-            ];
+            // --- DATA ---
+            const loreFacts = ["When CHUCK mines, Bitcoin asks for his autograph.", "CHUCK doesn’t HODL — he commands markets to stay.", "The market cap once tried to short CHUCK. It was disintegrated by a glare.", "CHUCK sent a memecoin to the moon; the moon paid rent.", "Slippage apologizes when CHUCK swaps.", "CHUCK once roundhoused a rug pull into a liquidity lock."];
             const memes = [
-                { img: 'https://i.imgur.com/gB3gSAg.jpeg', caption: 'Roundhouse to the Moon', author: '@memelord' },
-                { img: 'https://i.imgur.com/rLq57dJ.jpeg', caption: 'When your slippage turns into admiration', author: '@degentrader' },
-                { img: 'https://i.imgur.com/W2q2s2o.jpeg', caption: 'CHUCK winked and my portfolio did pushups', author: '@fitcoins' },
-                { img: 'https://i.imgur.com/O6M9k1o.jpeg', caption: 'Gas fees? CHUCK covers emotional fees', author: '@slowmo' },
-                { img: 'https://i.imgur.com/Y1cQ7bN.jpeg', caption: 'When you buy CHUCK and your ex texts you', author: '@stuntman' },
-                { img: 'https://i.imgur.com/sZ4e7gL.jpeg', caption: 'Moon photos now with extra roundhouse filter', author: '@astrofunk' },
-                { img: 'https://i.imgur.com/j4q4X0k.jpeg', caption: 'Proof CHUCK pays rent to the moon', author: '@proofguy' },
-                { img: 'https://i.imgur.com/oW5e2qR.jpeg', caption: 'When the chart says ‘no’ and CHUCK says ‘yes’', author: '@chartwhisper' },
+                { img: 'https://i.imgur.com/gB3gSAg.jpeg', caption: 'High Noon on the charts', author: 'by @memelord' },
+                { img: 'https://i.imgur.com/rLq57dJ.jpeg', caption: 'This town ain\'t big enough for the two of us', author: 'by @degentrader' },
+                { img: 'https://i.imgur.com/W2q2s2o.jpeg', caption: 'My portfolio after buying CHUCK', author: 'by @fitcoins' },
+                { img: 'https://i.imgur.com/O6M9k1o.jpeg', caption: 'They told me to diversify', author: 'by @slowmo' },
             ];
             const faqs = [
-                { q: "Is CHUCK a real Chuck Norris project?", a: "No. CHUCK is a parody memecoin, a tribute to the legend's persona and principles. It is not affiliated with, endorsed by, or authorized by Chuck Norris himself or any associated entity. It is purely for entertainment." },
-                { q: "Is this financial advice? Should I invest?", a: "Absolutely not. This is a highly speculative memecoin. Do your own research (DYOR) and never invest more than you can afford to lose. We provide memes, not financial guidance." },
-                { q: "What are the core principles behind CHUCK?", a: "Our principles are inspired by the legend: Freedom (from FUD), Family (community), Fitness (robust charts), Faith (in the project), and Fight (against bears and obstacles)." },
-                { q: "Is the liquidity locked and contract renounced?", a: "Yes. To ensure community safety and prevent rug pulls, the liquidity for CHUCK will be locked and/or burned upon launch. The contract will be verified and renounced to ensure immutability. Details will be provided on official channels." },
-                { q: "What are the tokenomics?", a: "CHUCK has a total supply of 1 billion tokens. There is a 0% dev allocation, and a max wallet cap (e.g., 1%) may be implemented at launch to prevent large whale manipulation. Exact tax details (if any) will be minimal and disclosed pre-launch." },
-                { q: "Where can I buy CHUCK?", a: "CHUCK will be available on decentralized exchanges (DEXs) on the Solana blockchain, such as Raydium, Jupiter, or Pump.fun, shortly after launch. Instructions are provided on the website." },
-                { q: "How can I join the CHUCK community?", a: "You can join our official Telegram and X (Twitter) channels (links in the footer) to stay updated, participate in discussions, and share memes!" }
+                { q: "Is this a real Chuck Norris project?", a: "No, partner. This is a parody memecoin, a tip of the hat to the legend. It's not affiliated with the man himself. It's all in good fun." },
+                { q: "Is this financial advice?", a: "Heck no. This here is a memecoin on the wild frontier of crypto. It's risky business. Don't put in more than you're willing to lose at a high-stakes poker game." },
+                { q: "Is it safe from bandits (rug pulls)?", a: "We aim for an honest game. The liquidity is burned, and the contract is renounced. You can check the proof on the blockchain. We believe in transparency in this town." },
+                { q: "Where can I talk with the posse?", a: "Join our Telegram and follow us on X (Twitter). That's where all the action, announcements, and meme contests happen." }
             ];
 
-
-            // --- Fact Ticker ---
-            const factTicker = document.getElementById('fact-ticker');
-            let factIndex = 0;
-            function updateFact() {
-                if (!factTicker) return;
-                factTicker.style.opacity = '0';
-                setTimeout(() => {
-                    factIndex = (factIndex + 1) % facts.length;
-                    factTicker.textContent = `*** CHUCK FACT: ${facts[factIndex]} ***`;
-                    factTicker.style.opacity = '1';
-                }, 500); // Fade out duration
-            }
-            updateFact(); // Initial display
-            setInterval(updateFact, 6000); // Change fact every 6 seconds
-
-            // --- Copy Contract Button ---
+            // --- COPY BUTTON ---
             const copyButton = document.getElementById('copy-button');
             const contractAddress = document.getElementById('contract-address');
             const toast = document.getElementById('toast');
-            if (copyButton && contractAddress && toast) {
+            if (copyButton) {
                 copyButton.addEventListener('click', () => {
                     navigator.clipboard.writeText(contractAddress.textContent).then(() => {
                         toast.className = "show";
                         setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 3000);
-                    }).catch(err => {
-                        console.error('Failed to copy text: ', err);
                     });
                 });
             }
 
-            // --- Meme Gallery & Lightbox ---
+            // --- LORE CARDS ---
+            const loreContainer = document.getElementById('lore-cards-container');
+            if (loreContainer) {
+                loreFacts.forEach(fact => {
+                    const card = document.createElement('div');
+                    card.className = 'wanted-poster text-center flex items-center justify-center';
+                    card.innerHTML = `<h3 class="font-western text-2xl">${fact}</h3>`;
+                    loreContainer.appendChild(card);
+                });
+            }
+
+            // --- MEME GALLERY & LIGHTBOX ---
             const memeGallery = document.getElementById('meme-gallery');
             const lightbox = document.getElementById('image-lightbox');
             const lightboxImg = document.getElementById('lightbox-img');
             const closeBtn = document.querySelector('.modal-close');
-
             if (memeGallery) {
                 memes.forEach(meme => {
                     const memeEl = document.createElement('div');
-                    memeEl.className = 'meme-tile';
+                    memeEl.className = 'cursor-pointer';
                     memeEl.innerHTML = `
-                        <img src="${meme.img}" alt="${meme.caption}" loading="lazy">
-                        <p class="caption">“${meme.caption}”</p>
-                        <p class="author">${meme.author}</p>`;
+                        <div class="wanted-poster p-2">
+                            <img src="${meme.img}" alt="${meme.caption}" class="w-full h-auto object-cover aspect-square" loading="lazy">
+                        </div>
+                        <p class="text-center text-sm mt-2 font-bold">“${meme.caption}”</p>
+                        <p class="text-center text-xs text-leather-red">${meme.author}</p>`;
                     memeEl.addEventListener('click', () => {
                         lightbox.style.display = "block";
                         lightboxImg.src = meme.img;
@@ -622,44 +248,23 @@
                     memeGallery.appendChild(memeEl);
                 });
             }
-            if (closeBtn) {
-                closeBtn.addEventListener('click', () => lightbox.style.display = "none");
-            }
-            lightbox.addEventListener('click', (e) => { // Close when clicking outside image
-                if (e.target !== lightboxImg) {
-                    lightbox.style.display = "none";
-                }
-            });
+            if(closeBtn) { closeBtn.addEventListener('click', () => lightbox.style.display = "none"); }
 
-
-            // --- FAQ Accordion ---
+            // --- FAQ ACCORDION ---
             const faqContainer = document.getElementById('faq-container');
-            if (faqContainer) {
-                faqs.forEach((faq, index) => {
+            if(faqContainer) {
+                faqs.forEach(faq => {
                     const faqItem = document.createElement('div');
-                    faqItem.className = 'faq-item';
+                    faqItem.className = 'border-2 border-wood-dark bg-bg-dusty';
                     faqItem.innerHTML = `
-                        <button class="faq-question">
-                            <span>${faq.q}</span>
-                            <span class="faq-arrow">+</span>
+                        <button class="w-full text-left p-4 font-western text-xl text-wood-dark flex justify-between items-center">
+                            <span>${faq.q}</span><span>+</span>
                         </button>
-                        <div class="faq-answer">
+                        <div class="p-4 border-t-2 border-dashed border-wood-dark hidden">
                             <p>${faq.a}</p>
                         </div>`;
-                    
-                    const questionButton = faqItem.querySelector('.faq-question');
-                    const answerDiv = faqItem.querySelector('.faq-answer');
-                    const arrowSpan = faqItem.querySelector('.faq-arrow');
-
-                    questionButton.addEventListener('click', () => {
-                        const isActive = faqItem.classList.toggle('active');
-                        if (isActive) {
-                            answerDiv.style.display = 'block';
-                            arrowSpan.textContent = 'x'; // Change to 'x' or '-' when open
-                        } else {
-                            answerDiv.style.display = 'none';
-                            arrowSpan.textContent = '+';
-                        }
+                    faqItem.querySelector('button').addEventListener('click', (e) => {
+                        e.currentTarget.nextElementSibling.classList.toggle('hidden');
                     });
                     faqContainer.appendChild(faqItem);
                 });
